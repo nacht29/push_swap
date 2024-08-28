@@ -13,6 +13,14 @@ static void	swap_nodes(stack *stack)
 	stack->top->next = temp;
 }
 
+/*
+*swaps the place of node 1 and node 2 in stack A
+*n1: stack->top
+*n2: stack->top->next
+*temp = n1
+*n1 = n2
+*n2 = temp;
+*/
 void	swap_a(stack *stack_a)
 {
 
@@ -22,6 +30,14 @@ void	swap_a(stack *stack_a)
 	ft_printf("sa\n");
 }
 
+/*
+*swaps the place of node 1 and node 2 in stack B
+*n1: stack->top
+*n2: stack->top->next
+*temp = n1
+*n1 = n2
+*n2 = temp;
+*/
 void	swap_b(stack *stack_b)
 {
 	if (!stack_b->top || !stack_b->top->next)
@@ -30,6 +46,9 @@ void	swap_b(stack *stack_b)
 	ft_printf("sb\n");
 }
 
+/*
+*runs both swap_a() and swap_b()
+*/
 void	swap_all(stack *stack_a, stack *stack_b)
 {
 	if (!stack_a || !stack_b)

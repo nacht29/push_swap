@@ -4,6 +4,8 @@ int	main(int ac, char *av[])
 {
 	long	*num_arr;
 	int		i;
+	stack	*stack_a;
+	stack	*stack_b;
 
 	if (ac < 3)
 		quit("Usage: ./push_swap num1 num2 num3 ...");
@@ -17,3 +19,8 @@ int	main(int ac, char *av[])
 		i++;
 	}
 }
+
+/*
+*stack A and B each contains a linked list, aka the node struct
+*maybe create a function to move things into both nodes
+*/

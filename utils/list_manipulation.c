@@ -60,6 +60,9 @@ void free_node_from_stack(stack *stack)
 	stack->size--;
 }
 
+/*
+*frees the entire stack
+*/
 void	free_whole_stack(stack *stack)
 {
 	node	*current;

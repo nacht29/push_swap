@@ -34,6 +34,11 @@ void	swap_a(stack *stack_a);
 void	swap_b(stack *stack_b);
 void	swap_all(stack *stack_a, stack *stack_b);
 
+// reverse rotate
+void	reverse_rotate_stack_a(stack *stack_a);
+void	reverse_rotate_stack_b(stack *stack_b);
+void	reverse_rotate_all(stack *stack_a, stack *stack_b);
+
 /*======*/
 /*UTILS*/
 /*======*/
