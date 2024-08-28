@@ -1,61 +1,47 @@
 #include "../includes/push_swap.h"
 
-/*
-*Shift down all elements of stack A by 1.
-The last element becomes the first one.
-*
-*Steps:
-*1.Remove the first node: Detach the first node from the list.
-*2.Traverse to the last node: Find the last node in the list.
-*3.Attach the first node after the last node: 
-Make the previously first node the new last node.
-*4.Update the head of the list: Set the second node as the new 
-head of the list.
-*/
-void	reverse_rotate_stack_a(stack *stack_a)
+static void	*get_last_node(stack *stack)
 {
-	node	*first_node;
-	node	*current;
-
-	first_node = stack_a->top;
-	stack_a->top = stack_a->top->next;
-	current = stack_a->top;
-	first_node->next = NULL;
-	add_to_bottom(stack_a, first_node, 0);
-	ft_printf("rra\n");
+	node	*last_node;
+	
+	if (!stack->top)
+		return (NULL);
+	last_node = stack->top;
+	while (last_node->next)
+		last_node = last_node->next;
+	return (last_node);
 }
 
-/*
-*Shift down all elements of stack B by 1.
-The last element becomes the first one.
-*
-*Steps:
-*1.Remove the first node: Detach the first node from the list.
-*2.Traverse to the last node: Find the last node in the list.
-*3.Attach the first node after the last node: 
-Make the previously first node the new last node.
-*4.Update the head of the list: Set the second node as the new 
-head of the list.
-*/
-void	reverse_rotate_stack_b(stack *stack_b)
+static void	*get_sec_last_node(stack *stack)
 {
-	node	*first_node;
-	node	*current;
-
-	first_node = stack_b->top;
-	stack_b->top = stack_b->top->next;
-	current = stack_b->top;
-	first_node->next = NULL;
-	add_to_bottom(stack_b, first_node, 0);
-	ft_printf("rrb\n");
+	node	*sec_last_node;
+	node	*temp;
+	int		i;
+	
+	if (!stack->top)
+		return (NULL);
+	i = 0;
+	temp = stack->top;
+	sec_last_node = stack->top;
+	while (temp->next)
+	{
+		temp = temp->next;
+		i++;
+	}
+	while ((i - 1) > 0)
+	{
+		sec_last_node = sec_last_node->next;
+		i--;
+	}
+	return (sec_last_node);
 }
 
-/*
-*reverse rotates A and B
-*/
-void	reverse_rotate_all(stack *stack_a, stack *stack_b)
+void	reverse_rotate_stack_a(stack *stack_a)	
 {
-	reverse_rotate_stack_a(stack_a);
-	reverse_rotate_stack_b(stack_b);
-	ft_printf("rrr\n");
+	node	*last_node;
+	node	*sec_last_node;
+
+	if (get_size(stack_a) <= 1)
+		return ;
+	last_node = get_last_node(stack_a);
 }
