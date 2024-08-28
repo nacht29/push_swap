@@ -4,8 +4,8 @@ int	main(int ac, char *av[])
 {
 	long	*num_arr;
 	int		i;
-	stack	*stack_a;
-	stack	*stack_b;
+	// stack	*stack_a;
+	// stack	*stack_b;
 
 	if (ac < 3)
 		quit("Usage: ./push_swap num1 num2 num3 ...");

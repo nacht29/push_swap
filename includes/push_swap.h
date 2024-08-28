@@ -10,8 +10,8 @@
 
 typedef struct s_node
 {
-	int					num;
-	struct s_num_list	*next;
+	int				num;
+	struct s_node	*next;
 }	node;
 
 typedef struct s_stack

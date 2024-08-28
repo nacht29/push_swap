@@ -44,4 +44,34 @@ void	reverse_rotate_stack_a(stack *stack_a)
 	if (get_size(stack_a) <= 1)
 		return ;
 	last_node = get_last_node(stack_a);
+	sec_last_node = get_sec_last_node(stack_a);
+	add_to_top(stack_a, last_node, 0);
+	sec_last_node->next = NULL;
+	free(last_node);
 }
+
+/*
+static void	*get_sec_last_node(stack *stack)
+{
+	node	*sec_last_node;
+	node	*temp;
+	int		i;
+	
+	if (!stack->top)
+		return (NULL);
+	i = 0;
+	temp = stack->top;
+	sec_last_node = stack->top;
+	while (temp->next)
+	{
+		temp = temp->next;
+		i++;
+	}
+	while ((i - 1) > 0)
+	{
+		sec_last_node = sec_last_node->next;
+		i--;
+	}
+	return (sec_last_node);
+}
+*/

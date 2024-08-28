@@ -46,9 +46,11 @@ void	add_to_bottom(stack *stack, node *new_node, int size_flag)
 }
 
 /*
-*frees the first node and moves the linked list up
+*frees one node from linked-list
 */
-void free_node_from_stack(stack *stack)
+
+/*
+void free_node_from_stack(node *node)
 {
 	node	*temp;
 
@@ -59,6 +61,7 @@ void free_node_from_stack(stack *stack)
 	free(temp);
 	stack->size--;
 }
+*/
 
 /*
 *frees the entire stack
