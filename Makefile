@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = operations/*.c 
+SRCS = $(wildcard main/*.c operations/*.c utils/*.c)
 OBJS = ${SRCS:.c=.o}
 
 HEADER = -Iincludes

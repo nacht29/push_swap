@@ -1,0 +1,25 @@
+#include "../includes/push_swap.h"
+
+void	quit(const char *err_msg)
+{
+	ft_printf("%s\n", err_msg);
+	exit(EXIT_FAILURE);
+}
+
+int	is_sign(char c)
+{
+	if (c == '+' || c == '-')
+		return (TRUE);
+	return (FALSE);
+}
+
+int	is_num_str(char *s)
+{
+	while (*s)
+	{
+		if (ft_isdigit(*s) == 0)
+			return (FALSE);
+		s++;
+	}
+	return (TRUE);
+}
