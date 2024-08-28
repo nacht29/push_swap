@@ -20,7 +20,6 @@ typedef struct s_stack
 	int		size;
 }	stack;
 
-
 /*==========*/
 /*OPERATIONS*/
 /*==========*/
@@ -34,10 +33,10 @@ void	swap_a(stack *stack_a);
 void	swap_b(stack *stack_b);
 void	swap_all(stack *stack_a, stack *stack_b);
 
-// reverse rotate
-void	reverse_rotate_stack_a(stack *stack_a);
-void	reverse_rotate_stack_b(stack *stack_b);
-void	reverse_rotate_all(stack *stack_a, stack *stack_b);
+// rotate
+void	rotate_stack_a(stack *stack_a);
+void	rotate_stack_b(stack *stack_b);
+void	rotate_all(stack *stack_a, stack *stack_b);
 
 /*======*/
 /*UTILS*/
@@ -49,6 +48,9 @@ void	quit(const char *err_msg);
 // str_check
 int		is_num_str(char *s);
 int		is_sign(char c);
+
+// list checks
+int		get_size(stack *stack);
 
 // list-manipulation
 node	*create_new_node(int new_num);
