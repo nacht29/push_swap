@@ -48,6 +48,7 @@ void	reverse_rotate_stack_a(stack *stack_a)
 	add_to_top(stack_a, last_node);
 	sec_last_node->next = NULL;
 	free(last_node);
+	ft_printf("rra\n");
 }
 
 void	reverse_rotate_stack_b(stack *stack_b)
@@ -62,6 +63,7 @@ void	reverse_rotate_stack_b(stack *stack_b)
 	add_to_top(stack_b, last_node );
 	sec_last_node->next = NULL;
 	free(last_node);
+	ft_printf("rrb\n");
 }
 
 /*

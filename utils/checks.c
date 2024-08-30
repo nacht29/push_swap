@@ -6,7 +6,7 @@ void	quit(void)
 	exit(EXIT_FAILURE);
 }
 
-int	is_sign(char c)
+static int	is_sign(char c)
 {
 	if (c == '+' || c == '-')
 		return (TRUE);
@@ -15,13 +15,13 @@ int	is_sign(char c)
 
 int	is_num_str(char *s)
 {
-	while (*s)
-	{
-		if (ft_isdigit(*s) == 0)
-			return (FALSE);
+	if  (is_sign(*s) == TRUE)
 		s++;
-	}
-	return (TRUE);
+	while (ft_isdigit(*s) == 1)
+		s++;
+	if (*s == '\0')
+		return (TRUE);
+	return (FALSE);
 }
 
 /*

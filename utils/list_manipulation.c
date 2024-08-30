@@ -22,6 +22,8 @@ void	add_to_top(stack *stack, node *new_node)
 {
 	if (!stack || !new_node)
 		return ;
+	if (stack->top)
+		stack->top = new_node;
 	new_node->next = stack->top;
 	stack->top = new_node;
 }
@@ -29,16 +31,23 @@ void	add_to_top(stack *stack, node *new_node)
 /*
 *adds a new node to the end of a linked list
 */
-void	add_to_bottom(stack *stack, node *new_node)
+void add_to_bottom(stack *stack, node *new_node)
 {
-	node	*current;
+    node *current;
 
-	if (!stack || !new_node)
-		return ;
-	current = stack->top;
-	while (current->next)
-		current = current->next;
-	current->next = new_node;
+    if (!stack || !new_node)
+        return;
+    if (!stack->top)
+    {
+        stack->top = new_node;
+        stack->size = 1;
+        return;
+    }
+    current = stack->top;
+    while (current->next)
+        current = current->next;
+    current->next = new_node;
+    stack->size++;
 }
 
 /*

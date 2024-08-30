@@ -25,34 +25,44 @@ typedef struct s_stack
 /*==========*/
 
 // push
+
 void push_a_to_b(stack *stack_a, stack *stack_b);
 void push_b_to_a(stack *stack_b, stack *stack_a);
 
 // swap
+
 void	swap_a(stack *stack_a);
 void	swap_b(stack *stack_b);
 void	swap_all(stack *stack_a, stack *stack_b);
 
 // rotate
+
 void	rotate_stack_a(stack *stack_a);
 void	rotate_stack_b(stack *stack_b);
 void	rotate_all(stack *stack_a, stack *stack_b);
+
+// reverse rotate
+
+void	reverse_rotate_stack_a(stack *stack_a);
+void	reverse_rotate_stack_b(stack *stack_b);
 
 /*======*/
 /*UTILS*/
 /*======*/
 
 // genereic
+
 void	quit(void);
 
 // str_check
+
 int		is_num_str(char *s);
-int		is_sign(char c);
 
 // list checks
 // int		get_size(stack *stack);
 
 // list-manipulation
+
 node	*create_new_node(int new_num);
 void	add_to_top(stack *stack, node *new_node);
 void	add_to_bottom(stack *stack, node *new_node);
