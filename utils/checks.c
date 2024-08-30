@@ -1,8 +1,8 @@
 #include "../includes/push_swap.h"
 
-void	quit(const char *err_msg)
+void	quit(void)
 {
-	ft_printf("%s\n", err_msg);
+	ft_putendl_fd("Error", STDERR_FILENO);
 	exit(EXIT_FAILURE);
 }
 
@@ -27,6 +27,7 @@ int	is_num_str(char *s)
 /*
 *calculates size of linked list
 */
+/*
 int	get_size(stack *stack)
 {
 	int		size;
@@ -42,3 +43,4 @@ int	get_size(stack *stack)
 	}
 	return (size);
 }
+*/

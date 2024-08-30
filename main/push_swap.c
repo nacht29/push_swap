@@ -2,20 +2,20 @@
 
 int	main(int ac, char *av[])
 {
-	long	*num_arr;
 	int		i;
-	// stack	*stack_a;
-	// stack	*stack_b;
+	stack	*stack_a;
+	stack	*stack_b;
 
 	if (ac < 3)
-		quit("Usage: ./push_swap num1 num2 num3 ...");
+		quit();
 	i = 1;
-	num_arr = malloc(sizeof(int) * (ac - 1));
+	stack_a = NULL;
+	stack_b = NULL;
 	while (i < ac)
 	{
 		if (is_num_str(av[i]) == FALSE && is_sign(av[i][0]) == FALSE)
-			quit("Incorrect args");
-		num_arr[i] = ft_atol(av[i]);
+			quit();
+		add_to_bottom(stack_a, create_new_node(ft_atoi(av[i])));
 		i++;
 	}
 }

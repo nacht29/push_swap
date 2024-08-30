@@ -43,18 +43,18 @@ void	rotate_all(stack *stack_a, stack *stack_b);
 /*======*/
 
 // genereic
-void	quit(const char *err_msg);
+void	quit(void);
 
 // str_check
 int		is_num_str(char *s);
 int		is_sign(char c);
 
 // list checks
-int		get_size(stack *stack);
+// int		get_size(stack *stack);
 
 // list-manipulation
 node	*create_new_node(int new_num);
-void	add_to_top(stack *stack, node *new_node, int size_flag);
-void	add_to_bottom(stack *stack, node *new_node,  int size_flag);
+void	add_to_top(stack *stack, node *new_node);
+void	add_to_bottom(stack *stack, node *new_node);
 void	free_node_from_stack(stack **stack);
 #endif

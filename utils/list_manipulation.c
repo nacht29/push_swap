@@ -18,20 +18,18 @@ node	*create_new_node(int new_num)
 /*
 *adds a new node to the start of a linked list
 */
-void	add_to_top(stack *stack, node *new_node, int size_flag)
+void	add_to_top(stack *stack, node *new_node)
 {
 	if (!stack || !new_node)
 		return ;
 	new_node->next = stack->top;
 	stack->top = new_node;
-	if (size_flag == 1)
-		stack->size++;
 }
 
 /*
 *adds a new node to the end of a linked list
 */
-void	add_to_bottom(stack *stack, node *new_node, int size_flag)
+void	add_to_bottom(stack *stack, node *new_node)
 {
 	node	*current;
 
@@ -41,8 +39,6 @@ void	add_to_bottom(stack *stack, node *new_node, int size_flag)
 	while (current->next)
 		current = current->next;
 	current->next = new_node;
-	if (size_flag == 1)
-		stack->size++;
 }
 
 /*

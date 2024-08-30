@@ -21,13 +21,13 @@ void	rotate_stack_a(stack *stack_a)
 	node	*first_node;
 	node	*current;
 
-	if (get_size(stack_a) <= 1)
+	if (stack_a->size <= 1)
 		return ;
 	first_node = stack_a->top;
 	stack_a->top = stack_a->top->next;
 	current = stack_a->top;
 	first_node->next = NULL;
-	add_to_bottom(stack_a, first_node, 0);
+	add_to_bottom(stack_a, first_node);
 	ft_printf("rra\n");
 }
 
@@ -52,13 +52,13 @@ void	rotate_stack_b(stack *stack_b)
 	node	*first_node;
 	node	*current;
 
-	if (get_size(stack_b) <= 1)
+	if (stack_b->size <= 1)
 		return ;
 	first_node = stack_b->top;
 	stack_b->top = stack_b->top->next;
 	current = stack_b->top;
 	first_node->next = NULL;
-	add_to_bottom(stack_b, first_node, 0);
+	add_to_bottom(stack_b, first_node);
 	ft_printf("rrb\n");
 }
 

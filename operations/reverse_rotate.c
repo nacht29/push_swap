@@ -36,16 +36,30 @@ static void	*get_sec_last_node(stack *stack)
 	return (sec_last_node);
 }
 
-void	reverse_rotate_stack_a(stack *stack_a)	
+void	reverse_rotate_stack_a(stack *stack_a)
 {
 	node	*last_node;
 	node	*sec_last_node;
 
-	if (get_size(stack_a) <= 1)
+	if (stack_a->size <= 1)
 		return ;
 	last_node = get_last_node(stack_a);
 	sec_last_node = get_sec_last_node(stack_a);
-	add_to_top(stack_a, last_node, 0);
+	add_to_top(stack_a, last_node);
+	sec_last_node->next = NULL;
+	free(last_node);
+}
+
+void	reverse_rotate_stack_b(stack *stack_b)
+{
+	node	*last_node;
+	node	*sec_last_node;
+
+	if (stack_b->size <= 1)
+		return ;
+	last_node = get_last_node(stack_b);
+	sec_last_node = get_sec_last_node(stack_b);
+	add_to_top(stack_b, last_node );
 	sec_last_node->next = NULL;
 	free(last_node);
 }
