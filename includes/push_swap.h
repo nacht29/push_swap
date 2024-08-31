@@ -20,6 +20,13 @@ typedef struct s_stack
 	int		size;
 }	stack;
 
+/*====*/
+/*MAIN*/
+/*====*/
+
+void	init_stack(stack **stack_a, stack **stack_b);
+void	add_num_to_stack_a(int ac, char **av, stack **stack_a);
+
 /*==========*/
 /*OPERATIONS*/
 /*==========*/
