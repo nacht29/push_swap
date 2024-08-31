@@ -12,7 +12,8 @@ int main(int ac, char *av[])
 		quit();
 	init_stack(&stack_a, &stack_b);
 	add_num_to_stack_a(ac, av, &stack_a);
-	check_push(stack_a, stack_b);
+	// check_push(stack_a, stack_b);
+	check(stack_a);
 }
 
 void	init_stack(stack **stack_a, stack **stack_b)

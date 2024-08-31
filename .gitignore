@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# others
+*.txt
+push_swap
+*.out
+a.out
