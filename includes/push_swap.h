@@ -73,5 +73,6 @@ int	parse_check(char *num_str, stack *stack);
 node	*create_new_node(int new_num);
 void	add_to_top(stack *stack, node *new_node);
 void	add_to_bottom(stack *stack, node *new_node);
-void	free_node_from_stack(stack **stack);
+void	free_whole_stack(stack **stack);
+// void	free_node_from_stack(stack **stack);
 #endif

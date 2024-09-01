@@ -39,7 +39,9 @@ void	parse_stack_a(int ac, char **av, stack **stack_a)
 	while (i < ac)
 	{
 		if (parse_check(av[i], (*stack_a)) == FALSE)
+		{
 			quit();
+		}
 		new_node = create_new_node(ft_atoi(av[i]));
 		if (!new_node)
 			quit();

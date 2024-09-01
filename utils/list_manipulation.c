@@ -69,20 +69,20 @@ void free_node_from_stack(node *node)
 /*
 *frees the entire stack
 */
-void	free_whole_stack(stack *stack)
+void	free_whole_stack(stack **stack)
 {
 	node	*current;
 	node	*temp;
 
-	if (!stack)
+	if (!stack || !(*stack))
 		return ;
-	current = stack->top;
+	current = (*stack)->top;
 	while (current)
 	{
 		temp = current->next;
 		free(current);
 		current = temp;
 	}
-	stack->top = NULL;
-	stack->size = 0;
+	(*stack)->top = NULL;
+	(*stack)->size = 0;
 }
