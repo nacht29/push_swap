@@ -16,7 +16,7 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	rotate_stack_a(stack *stack_a)
+void	rotate_a(stack *stack_a)
 {
 	node	*first_node;
 	// node	*current;
@@ -47,7 +47,7 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	rotate_stack_b(stack *stack_b)
+void	rotate_b(stack *stack_b)
 {
 	node	*first_node;
 	// node	*current;
@@ -67,7 +67,7 @@ void	rotate_stack_b(stack *stack_b)
 */
 void	rotate_all(stack *stack_a, stack *stack_b)
 {
-	rotate_stack_a(stack_a);
-	rotate_stack_b(stack_b);
-	ft_printf("rrr\n");
+	rotate_a(stack_a);
+	rotate_b(stack_b);
+	ft_printf("rr\n");
 }

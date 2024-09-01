@@ -36,7 +36,7 @@ static void	*get_sec_last_node(stack *stack)
 	return (sec_last_node);
 }
 
-void	reverse_rotate_stack_a(stack *stack_a)
+void	reverse_rotate_a(stack *stack_a)
 {
 	node	*last_node;
 	node	*sec_last_node;
@@ -51,7 +51,7 @@ void	reverse_rotate_stack_a(stack *stack_a)
 	ft_printf("rra\n");
 }
 
-void	reverse_rotate_stack_b(stack *stack_b)
+void	reverse_rotate_b(stack *stack_b)
 {
 	node	*last_node;
 	node	*sec_last_node;
@@ -66,28 +66,9 @@ void	reverse_rotate_stack_b(stack *stack_b)
 	ft_printf("rrb\n");
 }
 
-/*
-static void	*get_sec_last_node(stack *stack)
+void	reverse_rotate_all(stack *stack_a, stack *stack_b)
 {
-	node	*sec_last_node;
-	node	*temp;
-	int		i;
-	
-	if (!stack->top)
-		return (NULL);
-	i = 0;
-	temp = stack->top;
-	sec_last_node = stack->top;
-	while (temp->next)
-	{
-		temp = temp->next;
-		i++;
-	}
-	while ((i - 1) > 0)
-	{
-		sec_last_node = sec_last_node->next;
-		i--;
-	}
-	return (sec_last_node);
+	reverse_rotate_a(stack_a);
+	reverse_rotate_b(stack_b);
+	ft_printf("rrr\n");
 }
-*/

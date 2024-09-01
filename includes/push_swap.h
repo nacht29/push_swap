@@ -45,14 +45,14 @@ void	swap_all(stack *stack_a, stack *stack_b);
 
 // rotate
 
-void	rotate_stack_a(stack *stack_a);
-void	rotate_stack_b(stack *stack_b);
+void	rotate_a(stack *stack_a);
+void	rotate_b(stack *stack_b);
 void	rotate_all(stack *stack_a, stack *stack_b);
 
 // reverse rotate
 
-void	reverse_rotate_stack_a(stack *stack_a);
-void	reverse_rotate_stack_b(stack *stack_b);
+void	reverse_rotate_a(stack *stack_a);
+void	reverse_rotate_b(stack *stack_b);
 
 /*======*/
 /*UTILS*/
