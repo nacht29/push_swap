@@ -33,8 +33,8 @@ void	add_num_to_stack_a(int ac, char **av, stack **stack_a);
 
 // push
 
-void push_a_to_b(stack *stack_a, stack *stack_b);
-void push_b_to_a(stack *stack_b, stack *stack_a);
+void	push_a_to_b(stack *stack_a, stack *stack_b);
+void	push_b_to_a(stack *stack_b, stack *stack_a);
 
 // swap
 
@@ -64,9 +64,6 @@ void	quit(void);
 // str_check
 
 int		is_num_str(char *s);
-
-// list checks
-// int		get_size(stack *stack);
 
 // list-manipulation
 

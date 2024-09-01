@@ -6,11 +6,14 @@
 */
 static void	swap_nodes(stack *stack)
 {
-	node	*temp;
+	node	*first;
+	node	*second;
 
-	temp = stack->top;
-	stack->top = stack->top->next;
-	stack->top->next = temp;
+	first = stack->top;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	stack->top = second;
 }
 
 /*

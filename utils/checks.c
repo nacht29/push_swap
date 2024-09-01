@@ -23,24 +23,3 @@ int	is_num_str(char *s)
 		return (TRUE);
 	return (FALSE);
 }
-
-/*
-*calculates size of linked list
-*/
-/*
-int	get_size(stack *stack)
-{
-	int		size;
-	node	*current;
-
-	if (!stack->top)
-		return (0);
-	current = stack->top;
-	while (current)
-	{
-		size++;
-		current = current->next;
-	}
-	return (size);
-}
-*/

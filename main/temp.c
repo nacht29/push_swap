@@ -37,3 +37,25 @@ void	check(stack *stack)
 	}
 }
 */
+
+
+/*
+*calculates size of linked list
+*/
+/*
+int	get_size(stack *stack)
+{
+	int		size;
+	node	*current;
+
+	if (!stack->top)
+		return (0);
+	current = stack->top;
+	while (current)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
+}
+*/
