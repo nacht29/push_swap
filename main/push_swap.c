@@ -11,7 +11,7 @@ int main(int ac, char *av[])
 	if (ac < 2)
 		quit();
 	init_stack(&stack_a, &stack_b);
-	add_num_to_stack_a(ac, av, &stack_a);
+	parse_stack_a(ac, av, &stack_a);
 	// check_push(stack_a, stack_b);
 	check(stack_a);
 }
@@ -30,7 +30,7 @@ void	init_stack(stack **stack_a, stack **stack_b)
 	(*stack_b)->size = 0;
 }
 
-void	add_num_to_stack_a(int ac, char **av, stack **stack_a)
+void	parse_stack_a(int ac, char **av, stack **stack_a)
 {
 	int		i;
 	node	*new_node;
@@ -38,7 +38,7 @@ void	add_num_to_stack_a(int ac, char **av, stack **stack_a)
 	i = 1;
 	while (i < ac)
 	{
-		if (is_num_str(av[i]) == FALSE)
+		if (parse_check(av[i], (*stack_a)) == FALSE)
 			quit();
 		new_node = create_new_node(ft_atoi(av[i]));
 		if (!new_node)

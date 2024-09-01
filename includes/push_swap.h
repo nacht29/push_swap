@@ -4,6 +4,7 @@
 # include "../libft/libft.h"
 # include <stdlib.h>
 # include <stddef.h>
+# include <limits.h>
 
 # define TRUE 1
 # define FALSE 0
@@ -25,7 +26,7 @@ typedef struct s_stack
 /*====*/
 
 void	init_stack(stack **stack_a, stack **stack_b);
-void	add_num_to_stack_a(int ac, char **av, stack **stack_a);
+void	parse_stack_a(int ac, char **av, stack **stack_a);
 
 /*==========*/
 /*OPERATIONS*/
@@ -57,14 +58,16 @@ void	reverse_rotate_stack_b(stack *stack_b);
 /*UTILS*/
 /*======*/
 
-// genereic
+/*checks*/
+// exit
 
 void	quit(void);
 
-// str_check
+// parsing
 
-int		is_num_str(char *s);
+int	parse_check(char *num_str, stack *stack);
 
+/*operations*/
 // list-manipulation
 
 node	*create_new_node(int new_num);
