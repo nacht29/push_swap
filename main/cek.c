@@ -22,7 +22,10 @@ void	check(stack *stack)
 		ft_printf("%i\n", cur->num);
 		cur = cur->next;
 	}
-	swap_a(stack);
+	// rotate_stack_a(stack);
+	// rotate_stack_a(stack);
+	reverse_rotate_stack_a(stack);
+	reverse_rotate_stack_a(stack);
 	cur = stack->top;
 	while (cur)
 	{

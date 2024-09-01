@@ -22,7 +22,7 @@ static void	*get_sec_last_node(stack *stack)
 		return (NULL);
 	i = 0;
 	temp = stack->top;
-	sec_last_node = stack->top;
+	sec_last_node = stack->top;     
 	while (temp->next)
 	{
 		temp = temp->next;
@@ -47,7 +47,7 @@ void	reverse_rotate_stack_a(stack *stack_a)
 	sec_last_node = get_sec_last_node(stack_a);
 	add_to_top(stack_a, last_node);
 	sec_last_node->next = NULL;
-	free(last_node);
+	// free(last_node);
 	ft_printf("rra\n");
 }
 
@@ -62,7 +62,7 @@ void	reverse_rotate_stack_b(stack *stack_b)
 	sec_last_node = get_sec_last_node(stack_b);
 	add_to_top(stack_b, last_node );
 	sec_last_node->next = NULL;
-	free(last_node);
+	// free(last_node);
 	ft_printf("rrb\n");
 }
 

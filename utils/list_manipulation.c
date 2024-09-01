@@ -53,7 +53,7 @@ void add_to_bottom(stack *stack, node *new_node)
 */
 
 /*
-void free_node_from_stack(node *node)
+void free_node_from_stack(node **node)
 {
 	node	*temp;
 
