@@ -8,10 +8,13 @@
 
 # define TRUE 1
 # define FALSE 0
+# define A_TO_B 0
+# define B_TO_A 1
 
 typedef struct s_node
 {
 	int				num;
+	int				target;
 	struct s_node	*next;
 }	node;
 
@@ -25,8 +28,22 @@ typedef struct s_stack
 /*MAIN*/
 /*====*/
 
+// main
 void	init_stack(stack **stack_a, stack **stack_b);
 void	parse_stack_a(int ac, char **av, stack **stack_a);
+
+/*====*/
+/*TURK*/
+/*====*/
+
+// main process (push_swap)
+
+void	push_swap(stack *stack_a, stack *stack_b);
+void	set_target_a(stack *stack_a, stack *stack_b);
+
+// utils
+
+int		get_target_a(int target_a, stack *stack_b);
 
 /*==========*/
 /*OPERATIONS*/

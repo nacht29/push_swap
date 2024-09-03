@@ -6,7 +6,7 @@ void	quit(void)
 	exit(EXIT_FAILURE);
 }
 
-int	is_num_str(char *s)
+static int	is_num_str(char *s)
 {
 	if  (*s == '+' || *s == '-')
 		s++;
@@ -17,7 +17,7 @@ int	is_num_str(char *s)
 	return (FALSE);
 }
 
-int	is_duplicate(char *s, stack *stack)
+static int	is_duplicate(char *s, stack *stack)
 {
 	node	*cur;
 
