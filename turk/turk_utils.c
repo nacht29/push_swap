@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static int	get_max(stack *stack)
+int	get_max(stack *stack)
 {
 	int		max;
 	node	*cur;
@@ -14,6 +14,22 @@ static int	get_max(stack *stack)
 		cur = cur->next;
 	}
 	return (max);
+}
+
+int	get_min(stack *stack)
+{
+	int		min;
+	node	*cur;
+
+	cur = stack->top;
+	min = cur->num;
+	while (cur)
+	{
+		if (cur->num < min)
+			min = cur->num;
+		cur = cur->next;
+	}
+	return (min);
 }
 
 int	get_target_a(int target_a, stack *stack_b)

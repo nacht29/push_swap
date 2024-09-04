@@ -28,45 +28,57 @@ typedef struct s_stack
 /*MAIN*/
 /*====*/
 
-// main
+/*STACK CHECK*/
+void	check(stack *stack);
+
+/*PARSING*/
+// parsing process
 void	init_stack(stack **stack_a, stack **stack_b);
 void	parse_stack_a(int ac, char **av, stack **stack_a);
+int		parse_check(char *num_str, stack *stack);
+
+// error and exit
+void	err_and_exit(void);
+void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str);
 
 /*====*/
 /*TURK*/
 /*====*/
 
-// main process (push_swap)
+/*MAIN PROCESS*/
 
 void	push_swap(stack *stack_a, stack *stack_b);
 void	set_target_a(stack *stack_a, stack *stack_b);
 
-// utils
-
+/*UTILS*/
+// target notes
 int		get_target_a(int target_a, stack *stack_b);
+
+// min/max num
+int		get_max(stack *stack); // will be needed for sorting stack of 3 in a
 
 /*==========*/
 /*OPERATIONS*/
 /*==========*/
 
-// push
+/*PUSH*/
 
 void	push_a_to_b(stack *stack_a, stack *stack_b);
 void	push_b_to_a(stack *stack_b, stack *stack_a);
 
-// swap
+/*SWAP*/
 
 void	swap_a(stack *stack_a);
 void	swap_b(stack *stack_b);
 void	swap_all(stack *stack_a, stack *stack_b);
 
-// rotate
+/*ROTATE*/
 
 void	rotate_a(stack *stack_a);
 void	rotate_b(stack *stack_b);
 void	rotate_all(stack *stack_a, stack *stack_b);
 
-// reverse rotate
+/*REVERSE ROTATE*/
 
 void	reverse_rotate_a(stack *stack_a);
 void	reverse_rotate_b(stack *stack_b);
@@ -74,15 +86,6 @@ void	reverse_rotate_b(stack *stack_b);
 /*======*/
 /*UTILS*/
 /*======*/
-
-/*checks*/
-// exit
-
-void	quit(void);
-
-// parsing
-
-int	parse_check(char *num_str, stack *stack);
 
 /*operations*/
 // list-manipulation

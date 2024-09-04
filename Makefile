@@ -38,11 +38,15 @@ clean:
 	@echo "$(PURPLE)clean successful$(RESET)"
 
 fclean: clean
+	@clear
 	@make fclean -C $(LIBFT_DIR) -s
 	@rm -f $(NAME)
 	@echo "$(PURPLE)fclean successful$(RESET)"
 
-re: fclean all
+clear:
+	@clear
+
+re: clear fclean all
 
 FORCE:
 
