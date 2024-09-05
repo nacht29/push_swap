@@ -12,6 +12,8 @@ void	push_swap(stack *stack_a, stack *stack_b)
 {
 	if (stack_a->size > 3)
 	{
+		if (is_sorted(stack_a) == TRUE)
+			return ;
 		push_a_to_b(stack_a, stack_b);
 		push_a_to_b(stack_a, stack_b);
 		if (stack_a->size > 3)

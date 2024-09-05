@@ -42,7 +42,7 @@ void	parse_stack_a(int ac, char **av, stack **stack_a)
 	while (num_str_arr[i])
 	{
 		if (parse_check(num_str_arr[i], (*stack_a)) == FALSE)
-			free_parse_data(stack_a, &num_str, &num_str_arr);
+			free_parse_data(stack_a, &num_str_arr, &num_str);
 		new_node = create_new_node(ft_atoi(num_str_arr[i]));
 		if (!new_node)
 			err_and_exit();

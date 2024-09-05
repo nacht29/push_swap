@@ -57,3 +57,19 @@ int	get_target_a(int target_a, stack *stack_b)
 	return (target);
 }
 
+int	is_sorted(stack *stack)
+{
+	node	*cur;
+	int		prev;
+
+	cur = stack->top->next;
+	prev = stack->top->num;
+	while (cur && cur->num > prev)
+	{
+		prev = cur->num;
+		cur = cur->next;
+	}
+	if (cur == NULL)
+		return (TRUE);
+	return (FALSE);
+}

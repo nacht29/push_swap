@@ -56,6 +56,10 @@ int		get_target_a(int target_a, stack *stack_b);
 
 // min/max num
 int		get_max(stack *stack); // will be needed for sorting stack of 3 in a
+int		get_min(stack *stack);
+
+// check if stack si sorted
+int		is_sorted(stack *stack);
 
 /*==========*/
 /*OPERATIONS*/

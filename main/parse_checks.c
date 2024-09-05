@@ -11,9 +11,16 @@ void	err_and_exit(void)
 
 void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str)
 {
+	int	i;
+
+	i = 0;
 	free_whole_stack(stack_a);
-	free(num_str_arr);
-	free(num_str);
+	while ((*num_str_arr)[i])
+	{
+		free((*num_str_arr)[i]);
+		i++;
+	}
+	free(*num_str);
 	err_and_exit();
 }
 
