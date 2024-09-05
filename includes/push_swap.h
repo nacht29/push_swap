@@ -14,6 +14,9 @@
 typedef struct s_node
 {
 	int				num;
+	// int				index;
+	// int				above_median;
+	int				cheapest;
 	int				target;
 	struct s_node	*next;
 }	node;

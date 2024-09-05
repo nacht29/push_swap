@@ -10,15 +10,12 @@ node	*cur = stack_a->top;
 */
 void	push_swap(stack *stack_a, stack *stack_b)
 {
-	if (stack_a->size > 3)
-	{
-		if (is_sorted(stack_a) == TRUE)
+	if (is_sorted(stack_a) == TRUE)
 			return ;
+	if (stack_a->size > 3)
 		push_a_to_b(stack_a, stack_b);
+	if (stack_a->size > 3)
 		push_a_to_b(stack_a, stack_b);
-		if (stack_a->size > 3)
-			set_target_a(stack_a, stack_b);
-	}
 }
 
 /*

@@ -62,14 +62,12 @@ int	is_sorted(stack *stack)
 	node	*cur;
 	int		prev;
 
-	cur = stack->top->next;
-	prev = stack->top->num;
-	while (cur && cur->num > prev)
+	cur = stack->top;
+	while (cur->next)
 	{
-		prev = cur->num;
+		if (cur->num > cur->next->num)
+			return (FALSE);
 		cur = cur->next;
 	}
-	if (cur == NULL)
-		return (TRUE);
-	return (FALSE);
+	return (TRUE);
 }
