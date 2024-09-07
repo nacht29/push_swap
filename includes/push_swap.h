@@ -39,11 +39,12 @@ void	parse_stack_a(int ac, char **av, stack **stack_a);
 
 int		parse_check(char *num_str, stack *stack);
 void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str);
+char	*combine_str(int ac, char **av);
 
-/*extra utils*/
+/*push_swap utils*/
 
 void	err_and_exit(void);
-char	*combine_str(int ac, char **av);
+int		stack_is_sorted(stack *stack);
 
 /*==========*/
 /*OPERATIONS*/
@@ -55,4 +56,15 @@ node	*append_node(int new_num);
 void	add_to_top(stack *stack, node *new_node);
 void	add_to_bottom(stack *stack, node *new_node);
 void	free_whole_stack(stack **stack);
+
+/*================*/
+/*TURK'S ALGORITHM*/
+/*================*/
+
+/*sort 2 and sort 3*/
+void	sort_two(stack **stack);
+void	sort_three(stack **stack);
+
+/*sort multiple*/
+void	sort_stacks(stack **stack_a, stack **stack_b);
 #endif

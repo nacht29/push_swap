@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = $(wildcard push_swap_main/*.c init_parse/*.c turk/*.c operations/*.c)
+SRCS = $(wildcard push_swap_main/*.c init_parse/*.c turk_algo/*.c operations/*.c)
 OBJS = ${SRCS:.c=.o}
 
 HEADER = -Iincludes
@@ -12,7 +12,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
+	@# $(CC) $(CFLAGS) $(HEADER) -c $< -o $@
+	$(CC) $(HEADER) -c $< -o $@
 
 GREEN = \033[1;32m
 YELLOW = \033[1;33m

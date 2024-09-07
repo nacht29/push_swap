@@ -11,6 +11,15 @@ int main(int ac, char *av[])
 		err_and_exit();
 	else
 		init_stack_a(ac, av, &stack_a);
+	if (stack_is_sorted(stack_a) == FALSE)
+	{
+		if (stack_a->size == 2)
+			sort_two(&stack_a);
+		else if (stack_a->size == 3)
+			sort_three(&stack_a);
+		else
+			sort_stacks(&stack_a, &stack_b);
+	}
 }
 
 void	init_stack_a(int ac, char **av, stack **stack_a)

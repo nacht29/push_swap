@@ -29,6 +29,27 @@ void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str)
 	err_and_exit();
 }
 
+char	*combine_str(int ac, char **av)
+{
+	int		i;
+	char	*line;
+	char	*temp;
+	char	*with_spc;
+
+	i = 1;
+	line = ft_strdup("");
+	while (i < ac)
+	{
+		with_spc = ft_strjoin(" ", av[i]);
+		temp = ft_strjoin(line, with_spc);
+		free(line);
+		free(with_spc);
+		line = temp;
+		i++;
+	}
+	return (line);
+}
+
 static int	is_num_str(char *s)
 {
 	if  (*s == '+' || *s == '-')
