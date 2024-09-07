@@ -19,3 +19,15 @@ int	stack_is_sorted(stack *stack)
 	}
 	return (TRUE);
 }
+
+void	show_content(stack *stack)
+{
+	node	*cur;
+
+	cur = stack->top;
+	while (cur)
+	{
+		ft_printf("%i\n", cur->num);
+		cur = cur->next;
+	}
+}

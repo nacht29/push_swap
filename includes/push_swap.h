@@ -45,6 +45,7 @@ char	*combine_str(int ac, char **av);
 
 void	err_and_exit(void);
 int		stack_is_sorted(stack *stack);
+void	show_content(stack *stack);
 
 /*==========*/
 /*OPERATIONS*/
@@ -57,13 +58,17 @@ void	add_to_top(stack *stack, node *new_node);
 void	add_to_bottom(stack *stack, node *new_node);
 void	free_whole_stack(stack **stack);
 
+/*swap*/
+
+void	swap_a(stack **stack_a);
+
 /*================*/
 /*TURK'S ALGORITHM*/
 /*================*/
 
 /*sort 2 and sort 3*/
-void	sort_two(stack **stack);
-void	sort_three(stack **stack);
+void	sort_two(stack **stack_a);
+void	sort_three(stack **stack_a);
 
 /*sort multiple*/
 void	sort_stacks(stack **stack_a, stack **stack_b);
