@@ -11,9 +11,9 @@ node	*append_node(int new_num)
 	if (!new_node)
 		return (NULL);
 	new_node->num = new_num;
-    new_node->push_cost = 0;
-    new_node->above_median = FALSE;
-    new_node->cheapest = FALSE;
+	new_node->push_cost = 0;
+	new_node->above_median = FALSE;
+	new_node->cheapest = FALSE;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -41,14 +41,12 @@ void 	add_to_bottom(stack *stack, node *new_node)
 	if (!stack->top)
 	{
 		stack->top = new_node;
-		stack->size = 1;
 		return;
 	}
 	current = stack->top;
 	while (current->next)
 		current = current->next;
 	current->next = new_node;
-	stack->size++;
 }
 
 /*
