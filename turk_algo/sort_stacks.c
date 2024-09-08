@@ -2,5 +2,7 @@
 
 void	sort_stacks(stack **stack_a, stack **stack_b)
 {
-	return ;
+	init_stack_b(stack_b);
 }
+
+

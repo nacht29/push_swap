@@ -11,10 +11,8 @@ int main(int ac, char *av[])
 		err_and_exit();
 	else
 		init_stack_a(ac, av, &stack_a);
-	ft_printf("is sorted: %i\n", stack_is_sorted(stack_a));
 	if (stack_is_sorted(stack_a) == FALSE)
 	{
-		ft_printf("size: %i\n", stack_a->size);
 		if (stack_a->size == 2)
 			sort_two(&stack_a);
 		else if (stack_a->size == 3)
@@ -22,7 +20,8 @@ int main(int ac, char *av[])
 		else
 			sort_stacks(&stack_a, &stack_b);
 	}
-	show_content(stack_a);
+	// show_content("stack A", stack_a);
+	// show_content("stack B", stack_b);
 }
 
 void	init_stack_a(int ac, char **av, stack **stack_a)
@@ -54,8 +53,6 @@ void	parse_stack_a(int ac, char **av, stack **stack_a)
 			err_and_exit();
 		add_to_bottom((*stack_a), new_node);
 		(*stack_a)->size++;
-		ft_printf("size during parse: %i\n", (*stack_a)->size);
 		i++;
 	}
 }
-

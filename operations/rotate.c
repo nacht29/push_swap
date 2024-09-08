@@ -16,18 +16,18 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	rotate_a(stack *stack_a)
+void	rotate_a(stack **stack_a)
 {
 	node	*first_node;
 	// node	*current;
 
-	if (stack_a->size <= 1)
+	if ((*stack_a)->size <= 1)
 		return ;
-	first_node = stack_a->top;
-	stack_a->top = stack_a->top->next;
-	// current = stack_a->top;
+	first_node = (*stack_a)->top;
+	(*stack_a)->top = (*stack_a)->top->next;
+	// current = (*stack_a)->top;
 	first_node->next = NULL;
-	add_to_bottom(stack_a, first_node);
+	add_to_bottom(*stack_a, first_node);
 	ft_printf("ra\n");
 }
 
@@ -47,25 +47,25 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	rotate_b(stack *stack_b)
+void	rotate_b(stack **stack_b)
 {
 	node	*first_node;
 	// node	*current;
 
-	if (stack_b->size <= 1)
+	if ((*stack_b)->size <= 1)
 		return ;
-	first_node = stack_b->top;
-	stack_b->top = stack_b->top->next;
-	// current = stack_b->top;
+	first_node = (*stack_b)->top;
+	(*stack_b)->top = (*stack_b)->top->next;
+	// current = (*stack_b)->top;
 	first_node->next = NULL;
-	add_to_bottom(stack_b, first_node);
+	add_to_bottom(*stack_b, first_node);
 	ft_printf("rb\n");
 }
 
 /*
 *reverse rotates stacks A and B
 */
-void	rotate_all(stack *stack_a, stack *stack_b)
+void	rotate_all(stack **stack_a, stack **stack_b)
 {
 	rotate_a(stack_a);
 	rotate_b(stack_b);

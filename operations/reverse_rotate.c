@@ -4,7 +4,7 @@ static void	*get_last_node(stack *stack)
 {
 	node	*last_node;
 	
-	if (!stack->top)
+	if (!(stack->top))
 		return (NULL);
 	last_node = stack->top;
 	while (last_node->next)
@@ -36,37 +36,37 @@ static void	*get_sec_last_node(stack *stack)
 	return (sec_last_node);
 }
 
-void	reverse_rotate_a(stack *stack_a)
+void	reverse_rotate_a(stack **stack_a)
 {
 	node	*last_node;
 	node	*sec_last_node;
 
-	if (stack_a->size <= 1)
+	if ((*stack_a)->size <= 1)
 		return ;
-	last_node = get_last_node(stack_a);
-	sec_last_node = get_sec_last_node(stack_a);
-	add_to_top(stack_a, last_node);
+	last_node = get_last_node(*stack_a);
+	sec_last_node = get_sec_last_node(*stack_a);
+	add_to_top(*stack_a, last_node);
 	sec_last_node->next = NULL;
 	// free(last_node);
 	ft_printf("rra\n");
 }
 
-void	reverse_rotate_b(stack *stack_b)
+void	reverse_rotate_b(stack **stack_b)
 {
 	node	*last_node;
 	node	*sec_last_node;
 
-	if (stack_b->size <= 1)
+	if ((*stack_b)->size <= 1)
 		return ;
-	last_node = get_last_node(stack_b);
-	sec_last_node = get_sec_last_node(stack_b);
-	add_to_top(stack_b, last_node );
+	last_node = get_last_node(*stack_b);
+	sec_last_node = get_sec_last_node(*stack_b);
+	add_to_top(*stack_b, last_node);
 	sec_last_node->next = NULL;
 	// free(last_node);
 	ft_printf("rrb\n");
 }
 
-void	reverse_rotate_all(stack *stack_a, stack *stack_b)
+void	reverse_rotate_all(stack **stack_a, stack **stack_b)
 {
 	reverse_rotate_a(stack_a);
 	reverse_rotate_b(stack_b);

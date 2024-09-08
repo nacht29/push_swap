@@ -45,7 +45,7 @@ char	*combine_str(int ac, char **av);
 
 void	err_and_exit(void);
 int		stack_is_sorted(stack *stack);
-void	show_content(stack *stack);
+void	show_content(char *name, stack *stack);
 
 /*==========*/
 /*OPERATIONS*/
@@ -58,9 +58,30 @@ void	add_to_top(stack *stack, node *new_node);
 void	add_to_bottom(stack *stack, node *new_node);
 void	free_whole_stack(stack **stack);
 
+/*push*/
+
+void	push_a_to_b(stack **stack_a, stack **stack_b);
+void	push_b_to_a(stack **stack_b, stack **stack_a);
+
 /*swap*/
 
 void	swap_a(stack **stack_a);
+void	swap_b(stack **stack_b);
+void	swap_all(stack **stack_a, stack **stack_b);
+
+/*rotate*/
+
+void	rotate_a(stack **stack_a);
+void	rotate_b(stack **stack_b);
+void	rotate_all(stack **stack_a, stack **stack_b);
+
+/*reverse rotate*/
+
+void	reverse_rotate_a(stack **stack_a);
+void	reverse_rotate_b(stack **stack_b);
+void	reverse_rotate_all(stack **stack_a, stack **stack_b);
+
+/*reverse rotate*/
 
 /*================*/
 /*TURK'S ALGORITHM*/
@@ -72,4 +93,9 @@ void	sort_three(stack **stack_a);
 
 /*sort multiple*/
 void	sort_stacks(stack **stack_a, stack **stack_b);
+
+/*turk utils*/
+
+int		get_index(stack *stack, int num_in_stack);
+void	init_stack_b(stack **stack_b);
 #endif

@@ -6,18 +6,18 @@
 *size A -1
 *add_to_top: size B +1
 */
-void	push_a_to_b(stack *stack_a, stack *stack_b)
+void	push_a_to_b(stack **stack_a, stack **stack_b)
 {
 	node	*temp;
 
-	if (!stack_a || !stack_a->top)
+	if (!(*stack_a) || !((*stack_a)->top))
 		return;
-	temp = stack_a->top;
-	stack_a->top = stack_a->top->next;
-	stack_a->size--;
+	temp = (*stack_a)->top;
+	(*stack_a)->top = (*stack_a)->top->next;
+	(*stack_a)->size--;
 	temp->next = NULL;
-	add_to_top(stack_b, temp);
-	stack_b->size++;
+	add_to_top(*stack_b, temp);
+	(*stack_b)->size++;
 	ft_printf("pb\n");
 }
 
@@ -27,17 +27,17 @@ void	push_a_to_b(stack *stack_a, stack *stack_b)
 *size B -1
 *add_to_top: size A +1
 */
-void	push_b_to_a(stack *stack_b, stack *stack_a)
+void	push_b_to_a(stack **stack_b, stack **stack_a)
 {
 	node	*temp;
 
-	if (!stack_b || !stack_b->top)
+	if (!(*stack_b) || !((*stack_b)->top))
 		return;
-	temp = stack_b->top;
-	stack_b->top = stack_b->top->next;
-	stack_b->size--;
+	temp = (*stack_b)->top;
+	(*stack_b)->top = (*stack_b)->top->next;
+	(*stack_b)->size--;
 	temp->next = NULL;
-	add_to_top(stack_a, temp);
-	stack_a->size++;
+	add_to_top((*stack_a), temp);
+	(*stack_a)->size++;
 	ft_printf("pa\n");
 }
