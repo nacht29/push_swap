@@ -93,6 +93,7 @@ void	sort_three(stack **stack_a);
 
 /*sort multiple*/
 void	sort_stacks(stack **stack_a, stack **stack_b);
+void	move_a_to_b(stack **stack_a, stack **stack_b);
 
 /*turk utils*/
 

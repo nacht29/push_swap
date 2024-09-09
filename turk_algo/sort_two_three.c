@@ -14,7 +14,10 @@ void	sort_three(stack **stack_a)
 	node	*cur;
 
 	cur = (*stack_a)->top;
-	if (cur->num > cur->next->num && cur->num > cur->next->next->num)
-		rotate_a(stack_a);
+	if ((*stack_a)->size == 3)
+	{
+		if (cur->num > cur->next->num && cur->num > cur->next->next->num)
+			rotate_a(stack_a);
+	}
 	sort_two(stack_a);
 }
