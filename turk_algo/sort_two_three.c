@@ -16,6 +16,5 @@ void	sort_three(stack **stack_a)
 	cur = (*stack_a)->top;
 	if (cur->num > cur->next->num && cur->num > cur->next->next->num)
 		rotate_a(stack_a);
-	if (stack_is_sorted(*stack_a) == FALSE)
-		swap_a(stack_a);
+	sort_two(stack_a);
 }

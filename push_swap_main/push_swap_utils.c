@@ -6,20 +6,6 @@ void	err_and_exit(void)
 	exit(EXIT_FAILURE);
 }
 
-int	stack_is_sorted(stack *stack)
-{
-	node	*cur;
-	cur = stack->top;
-
-	while (cur->next)
-	{
-		if (cur->num > cur->next->num)
-			return (FALSE);
-		cur = cur->next;
-	}
-	return (TRUE);
-}
-
 void	show_content(char *name, stack *stack)
 {
 	node	*cur;
@@ -33,15 +19,17 @@ void	show_content(char *name, stack *stack)
 	}
 	cur = stack->top;
 	size = 1;
-	// while (cur)
-	// {
-	// 	ft_printf("node: %i\n", size);
-	// 	ft_printf("num: %i\npush cost: %i\nabove median: %i\ncheapest: %i\n", cur->num, cur->push_cost, cur->above_median, cur->cheapest);
-	// 	ft_printf("size: %i\n", stack->size);
-	// 	ft_printf("\n");
-	// 	size++;
-	// 	cur = cur->next;
-	// }
+	/*
+	while (cur)
+	{
+		ft_printf("node: %i\n", size);
+		ft_printf("num: %i\npush cost: %i\nabove median: %i\ncheapest: %i\n", cur->num, cur->push_cost, cur->above_median, cur->cheapest);
+		ft_printf("size: %i\n", stack->size);
+		ft_printf("\n");
+		size++;
+		cur = cur->next;
+	}
+	*/
 	while (cur)
 	{
 		ft_printf("num: %i\n", cur->num);
