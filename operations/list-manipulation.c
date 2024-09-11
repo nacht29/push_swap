@@ -14,6 +14,7 @@ node	*append_node(int new_num)
 	new_node->push_cost = 0;
 	new_node->above_median = FALSE;
 	new_node->cheapest = FALSE;
+	new_node->target_node = NULL;
 	new_node->next = NULL;
 	return (new_node);
 }

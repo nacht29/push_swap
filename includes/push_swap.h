@@ -17,6 +17,7 @@ typedef struct s_node
 	int				push_cost;
 	int				above_median;
 	int				cheapest;
+	struct s_node	*target_node;
 	struct s_node	*next;
 }	node;
 
@@ -24,6 +25,7 @@ typedef struct s_stack
 {
 	node	*top;
 	int		size;
+	
 }	stack;
 
 /*============*/
@@ -93,10 +95,18 @@ void	sort_three(stack **stack_a);
 
 /*sort multiple*/
 void	sort_stacks(stack **stack_a, stack **stack_b);
+void	init_nodes_a(stack *stack_a, stack *stack_b);
 void	move_a_to_b(stack **stack_a, stack **stack_b);
 
-/*turk utils*/
+/*init nodes in A*/
 
-int		get_index(stack *stack, int num_in_stack);
 void	init_stack_b(stack **stack_b);
+void	above_median(stack *stack_a);
+void	set_target_a(stack *stack_a, stack *stack_b);
+
+/*sort utils*/
+int		stack_is_sorted(stack *stack);
+node	*find_max(stack *stack);
+node	*find_min(stack *stack);
+
 #endif

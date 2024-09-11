@@ -19,21 +19,52 @@ int	stack_is_sorted(stack *stack)
 }
 
 /*
-*finds the index of a particular node in a linked list
-*the node is identified by its number
-*used to determine if the node is above median line
+*finds the node containing the maximum value in a stack
+*used when nodes in A cannot find target node in B
 */
-int	get_index(stack *stack, int num_in_stack)
+node	*find_max(stack *stack)
 {
-	int		index;
 	node	*cur;
+	int		max;
+	node	*max_node;
 
 	cur = stack->top;
-	index = 0;
-	while (cur && cur->num != num_in_stack)
+	max = INT_MIN;
+	max_node = NULL;
+	while (cur)
 	{
-		index++;
+		if (cur->num > max)
+		{
+			max = cur->num;
+			max_node = cur;
+		}
 		cur = cur->next;
 	}
-	return (index);
+	return (max_node);
+}
+
+
+/*
+*finds the node containing the maximum value in a stack
+*used when nodes in B cannot find target node in A
+*/
+node	*find_min(stack *stack)
+{
+	node	*cur;
+	int		min;
+	node	*min_node;
+
+	cur = stack->top;
+	min = INT_MAX;
+	min_node = NULL;
+	while (cur)
+	{
+		if (cur->num < min)
+		{
+			min = cur->num;
+			min_node = cur;
+		}
+		cur = cur->next;
+	}
+	return (min_node);
 }

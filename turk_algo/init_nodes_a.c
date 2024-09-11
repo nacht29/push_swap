@@ -1,0 +1,57 @@
+#include "../includes/push_swap.h"
+
+/*
+*mallocs and initiates stack b
+*/
+void	init_stack_b(stack **stack_b)
+{
+	*stack_b = (stack *)malloc(sizeof(stack));
+	if (!(*stack_b) || !stack_b)
+		err_and_exit();
+	(*stack_b)->top = NULL;
+	(*stack_b)->size = 0;
+}
+
+void	above_median(stack *stack_a)
+{
+	node	*cur;
+	int		median;
+	int		i;
+
+	cur = stack_a->top;
+	median = stack_a->size / 2;
+	i = 0;
+	while (cur)
+	{
+		if (i <= median)
+			cur->above_median = TRUE;
+		else
+			cur->above_median = FALSE;
+		cur = cur->next;
+		i++;
+	}
+}
+
+void	set_target_a(stack *stack_a, stack *stack_b)
+{
+	node	*cur_a;
+	node	*cur_b;
+	int		closest_smaller;
+
+	cur_a = stack_a->top;
+	while (cur_a)
+	{
+		cur_b = stack_b->top;
+		closest_smaller = INT_MIN;
+		while (cur_b)
+		{
+			if (cur_b->num < cur_a->num && cur_b->num > closest_smaller)
+			{
+				closest_smaller = cur_b->num;
+				cur_a->target_node = cur_b;
+			}
+			cur_b = cur_b->next;
+		}
+	}
+	cur_a = cur_a->next;
+}
