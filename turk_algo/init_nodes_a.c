@@ -52,6 +52,14 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 			}
 			cur_b = cur_b->next;
 		}
+		if (closest_smaller = INT_MIN)
+			cur_a->target_node = find_max(stack_b);
 	}
 	cur_a = cur_a->next;
+}
+
+void	set_cheapest(stack *stack)
+{
+	if (!stack)
+		return ;	
 }

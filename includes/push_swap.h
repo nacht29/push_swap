@@ -90,19 +90,24 @@ void	reverse_rotate_all(stack **stack_a, stack **stack_b);
 /*================*/
 
 /*sort 2 and sort 3*/
+
 void	sort_two(stack **stack_a);
 void	sort_three(stack **stack_a);
 
 /*sort multiple*/
+// main sorting process
+
 void	sort_stacks(stack **stack_a, stack **stack_b);
 void	init_nodes_a(stack *stack_a, stack *stack_b);
 void	move_a_to_b(stack **stack_a, stack **stack_b);
+void	move_b_to_a(stack **stack_a, stack **stack_b);
 
 /*init nodes in A*/
 
 void	init_stack_b(stack **stack_b);
 void	above_median(stack *stack_a);
 void	set_target_a(stack *stack_a, stack *stack_b);
+void	set_cheapest(stack *stack);
 
 /*sort utils*/
 int		stack_is_sorted(stack *stack);
