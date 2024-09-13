@@ -12,26 +12,12 @@ void	init_stack_b(stack **stack_b)
 	(*stack_b)->size = 0;
 }
 
-void	above_median(stack *stack_a)
-{
-	node	*cur;
-	int		median;
-	int		i;
-
-	cur = stack_a->top;
-	median = stack_a->size / 2;
-	i = 0;
-	while (cur)
-	{
-		if (i <= median)
-			cur->above_median = TRUE;
-		else
-			cur->above_median = FALSE;
-		cur = cur->next;
-		i++;
-	}
-}
-
+/*
+*sets the target nodes for nodes in stack A
+(the approx pos A will be pushed to)
+*it finds the node in B that's the closest and at the same time
+smaller than node in A
+*/
 void	set_target_a(stack *stack_a, stack *stack_b)
 {
 	node	*cur_a;
@@ -56,10 +42,4 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 			cur_a->target_node = find_max(stack_b);
 	}
 	cur_a = cur_a->next;
-}
-
-void	set_cheapest(stack *stack)
-{
-	if (!stack)
-		return ;	
 }
