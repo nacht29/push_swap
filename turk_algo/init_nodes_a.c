@@ -1,6 +1,19 @@
 #include "../includes/push_swap.h"
 
 /*
+ref:
+
+void	init_nodes_a(stack *stack_a, stack *stack_b)
+{
+	above_median(stack_a); - init_move utils
+	set_target_a(stack_a, stack_b); - init nodes
+	cost_calc(stack_a); - init move utils
+	set_cheapest(stack_a); init move utils
+}
+*/
+
+/*
+*for sorting > 3
 *mallocs and initiates stack b
 */
 void	init_stack_b(stack **stack_b)

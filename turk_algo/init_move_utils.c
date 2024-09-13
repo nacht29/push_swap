@@ -56,3 +56,30 @@ void	set_cheapest(stack *stack)
 	}
 	cur_cheapest->cheapest = TRUE;
 }
+
+void	cost_calc(stack *stack)
+{
+	return ;
+}
+
+/*
+*ind_targ is index target
+*returns the index of a particular node in a stack
+*used for calculating the push cost of a node
+*/
+int	get_index(stack *stack, node *ind_targ)
+{
+	int		index;
+	node	*cur;
+
+	index = 0;
+	cur = stack->top;
+	while (cur)
+	{
+		if (cur == ind_targ)
+			break ;
+		cur = cur->next;
+		index++;
+	}
+	return (index);
+}

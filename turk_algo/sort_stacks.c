@@ -1,5 +1,9 @@
 #include "../includes/push_swap.h"
 
+/*
+*sorts > 3
+*initiates stack B for use
+*/
 void	sort_stacks(stack **stack_a, stack **stack_b)
 {
 	init_stack_b(stack_b);
