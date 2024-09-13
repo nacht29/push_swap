@@ -29,20 +29,20 @@ $(NAME): $(GNL) $(PRINTF) $(OBJS)
 	@echo "$(GREEN)libft compiled$(RESET)"
 
 $(GNL):
-	@make -C $(GNL_DIR)
+	@make --no-print-directory -C $(GNL_DIR)
 
 $(PRINTF):
-	@make -C $(PRINTF_DIR)
+	@make --no-print-directory -C $(PRINTF_DIR)
 
 clean:
 	@$(RM) $(OBJS)
-	@make -C $(GNL_DIR) clean
-	@make -C $(PRINTF_DIR) clean
+	@make --no-print-directory -C $(GNL_DIR) clean
+	@make --no-print-directory -C $(PRINTF_DIR) clean
 
 fclean: clean
 	@$(RM) $(NAME) $(GNL) $(PRINTF)
-	@make -C $(GNL_DIR) fclean
-	@make -C $(PRINTF_DIR) fclean
+	@make --no-print-directory -C $(GNL_DIR) fclean
+	@make --no-print-directory -C $(PRINTF_DIR) fclean
 
 re: fclean all
 
