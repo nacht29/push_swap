@@ -57,6 +57,31 @@ void	set_cheapest(stack *stack)
 	cur_cheapest->cheapest = TRUE;
 }
 
+/*
+*locates and returns the cheapest node
+*searches for node with [cheapest = TRUE]
+*/
+node	*get_cheapest(stack *stack)
+{
+	node	*cur;
+
+	cur = stack->top;
+	while (cur)
+	{
+		if (cur->cheapest == TRUE)
+			break;
+		cur = cur->next;
+	}
+	return (cur);
+}
+
+/*
+*calculate the cost of pushing a node from one stack
+to the other
+*push cost is calculated by the number of steps needed to bring
+the push node and its target node to the correct pos
+(most likely on top of the stack)
+*/
 void	cost_calc(stack *stack)
 {
 	return ;
