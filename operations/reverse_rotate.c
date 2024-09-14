@@ -49,6 +49,7 @@ void	reverse_rotate_a(stack **stack_a)
 	sec_last_node->next = NULL;
 	// free(last_node);
 	ft_printf("rra\n");
+	index_median(*stack_a);
 }
 
 void	reverse_rotate_b(stack **stack_b)
@@ -64,6 +65,7 @@ void	reverse_rotate_b(stack **stack_b)
 	sec_last_node->next = NULL;
 	// free(last_node);
 	ft_printf("rrb\n");
+	index_median(*stack_b);
 }
 
 void	reverse_rotate_all(stack **stack_a, stack **stack_b)

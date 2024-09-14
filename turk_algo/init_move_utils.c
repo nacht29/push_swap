@@ -5,7 +5,7 @@
 *used to determine the least costly operation to perform
 to bring the node to the correct pos
 */
-void	above_median(stack *stack)
+void	index_median(stack *stack)
 {
 	node	*cur;
 	int		median;
@@ -16,6 +16,7 @@ void	above_median(stack *stack)
 	i = 0;
 	while (cur)
 	{
+		cur->index = i;
 		if (i <= median)
 			cur->above_median = TRUE;
 		else
@@ -85,26 +86,4 @@ the push node and its target node to the correct pos
 void	cost_calc(stack *stack)
 {
 	return ;
-}
-
-/*
-*ind_targ is index target
-*returns the index of a particular node in a stack
-*used for calculating the push cost of a node
-*/
-int	get_index(stack *stack, node *ind_targ)
-{
-	int		index;
-	node	*cur;
-
-	index = 0;
-	cur = stack->top;
-	while (cur)
-	{
-		if (cur == ind_targ)
-			break ;
-		cur = cur->next;
-		index++;
-	}
-	return (index);
 }

@@ -14,6 +14,7 @@ static void	swap_nodes(stack **stack)
 	first->next = second->next;
 	second->next = first;
 	(*stack)->top = second;
+	index_median(*stack);
 }
 
 /*

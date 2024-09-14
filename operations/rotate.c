@@ -29,6 +29,7 @@ void	rotate_a(stack **stack_a)
 	first_node->next = NULL;
 	add_to_bottom(*stack_a, first_node);
 	ft_printf("ra\n");
+	index_median(*stack_a);
 }
 
 /*
@@ -60,6 +61,7 @@ void	rotate_b(stack **stack_b)
 	first_node->next = NULL;
 	add_to_bottom(*stack_b, first_node);
 	ft_printf("rb\n");
+	index_median(*stack_b);
 }
 
 /*

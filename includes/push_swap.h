@@ -14,6 +14,7 @@
 typedef struct s_node
 {
 	int				num;
+	int				index;
 	int				push_cost;
 	int				above_median;
 	int				cheapest;
@@ -105,9 +106,13 @@ void	move_b_to_a(stack **stack_a, stack **stack_b);
 /*init nodes in A*/
 
 void	init_stack_b(stack **stack_b);
-void	above_median(stack *stack_a);
 void	set_target_a(stack *stack_a, stack *stack_b);
+
+/*init and move utils*/
+
+void	index_median(stack *stack);
 void	set_cheapest(stack *stack);
+node	*get_cheapest(stack *stack);
 
 /*sort utils*/
 int		stack_is_sorted(stack *stack);

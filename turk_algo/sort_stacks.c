@@ -35,7 +35,7 @@ void	sort_stacks(stack **stack_a, stack **stack_b)
 */
 void	init_nodes_a(stack *stack_a, stack *stack_b)
 {
-	above_median(stack_a);
+	index_median(stack_a);
 	set_target_a(stack_a, stack_b);
 	// cost_calc(stack_a);
 	set_cheapest(stack_a);
@@ -43,19 +43,20 @@ void	init_nodes_a(stack *stack_a, stack *stack_b)
 
 void	move_a_to_b(stack **stack_a, stack **stack_b)
 {
-	push_a_to_b(stack_a, stack_b);
-	return ;
-}
+	node	*cheapest;
 
-/*
-void	init_nodes_b(stack *stack_a, stack *stack_b)
-{
-	above_median(stack_b);
-	set_target_b(stack_a, stack_b);
-	cost_calc(stack_b);
-	set_cheapest(stack_b);
+	cheapest = get_cheapest(*stack_a);
+	if (cheapest->above_median && cheapest->target_node->above_median)
+	{
+		while ((*stack_a)->top != cheapest)
+			rotate_all(stack_a, stack_b);
+	}
+	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+	{
+		while ((*stack_a)->top != cheapest)
+			reverse_rotate_all(stack_a, stack_b);
+	}
 }
-*/
 
 void	move_b_to_a(stack **stack_a, stack **stack_b)
 {
