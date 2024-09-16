@@ -66,17 +66,19 @@ to the other
 the push node and its target node to the correct pos
 (most likely on top of the stack)
 */
-void	cost_calc(stack *stack)
+void	cost_calc(stack *src_stack, stack *targ_stack)
 {
 	node	*cur;
 
-	cur = stack->top;
+	cur = src_stack->top;
 	while (cur)
 	{
 		if (cur->above_median == TRUE)
 			cur->push_cost += cur->index;
 		if (cur->target_node->above_median == TRUE)
 			cur->push_cost += cur->target_node->index;
+		else
+			cur->push_cost += (targ_stack->size - cur->target_node->index);
 		cur = cur->next;
 	}
 }
