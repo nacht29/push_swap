@@ -60,6 +60,6 @@ void	move_a_to_b(stack **stack_a, stack **stack_b)
 
 void	move_b_to_a(stack **stack_a, stack **stack_b)
 {
-	push_b_to_a(stack_b, stack_a);
+	push_b_to_a(stack_a, stack_b);
 	return ;
 }

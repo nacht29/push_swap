@@ -29,7 +29,7 @@ void	push_a_to_b(stack **stack_a, stack **stack_b)
 *size B -1
 *add_to_top: size A +1
 */
-void	push_b_to_a(stack **stack_b, stack **stack_a)
+void	push_b_to_a(stack **stack_a, stack **stack_b)
 {
 	node	*temp;
 

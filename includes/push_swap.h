@@ -64,7 +64,7 @@ void	free_whole_stack(stack **stack);
 /*push*/
 
 void	push_a_to_b(stack **stack_a, stack **stack_b);
-void	push_b_to_a(stack **stack_b, stack **stack_a);
+void	push_b_to_a(stack **stack_a, stack **stack_b);
 
 /*swap*/
 
@@ -101,6 +101,7 @@ void	sort_three(stack **stack_a);
 void	sort_stacks(stack **stack_a, stack **stack_b);
 void	init_nodes_a(stack *stack_a, stack *stack_b);
 void	move_a_to_b(stack **stack_a, stack **stack_b);
+void	init_nodes_b(stack *stack_a, stack *stack_b);
 void	move_b_to_a(stack **stack_a, stack **stack_b);
 
 /*init nodes in A*/
