@@ -85,5 +85,15 @@ the push node and its target node to the correct pos
 */
 void	cost_calc(stack *stack)
 {
-	return ;
+	node	*cur;
+
+	cur = stack->top;
+	while (cur)
+	{
+		if (cur->above_median == TRUE)
+			cur->push_cost += cur->index;
+		if (cur->target_node->above_median == TRUE)
+			cur->push_cost += cur->target_node->index;
+		cur = cur->next;
+	}
 }
