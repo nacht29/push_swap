@@ -25,39 +25,6 @@ void	sort_stacks(stack **stack_a, stack **stack_b)
 	}
 }
 
-/*
-*sets the remaining values in each node in A
-*sets:
--median
--target node
--push cost
-*prepare to push to B
-*/
-void	init_nodes_a(stack *stack_a, stack *stack_b)
-{
-	index_median(stack_a);
-	set_target_a(stack_a, stack_b);
-	// cost_calc(stack_a);
-	set_cheapest(stack_a);
-}
-
-void	move_a_to_b(stack **stack_a, stack **stack_b)
-{
-	node	*cheapest;
-
-	cheapest = get_cheapest(*stack_a);
-	if (cheapest->above_median && cheapest->target_node->above_median)
-	{
-		while ((*stack_a)->top != cheapest)
-			rotate_all(stack_a, stack_b);
-	}
-	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
-	{
-		while ((*stack_a)->top != cheapest)
-			reverse_rotate_all(stack_a, stack_b);
-	}
-}
-
 void	move_b_to_a(stack **stack_a, stack **stack_b)
 {
 	push_b_to_a(stack_a, stack_b);

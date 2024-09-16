@@ -25,6 +25,7 @@ void	index_median(stack *stack)
 		i++;
 	}
 }
+
 /*
 *search for the cheapest node to push
 *the default cheapest push cost is INT_MAX
@@ -56,24 +57,6 @@ void	set_cheapest(stack *stack)
 		cur = cur->next;
 	}
 	cur_cheapest->cheapest = TRUE;
-}
-
-/*
-*locates and returns the cheapest node
-*searches for node with [cheapest = TRUE]
-*/
-node	*get_cheapest(stack *stack)
-{
-	node	*cur;
-
-	cur = stack->top;
-	while (cur)
-	{
-		if (cur->cheapest == TRUE)
-			break;
-		cur = cur->next;
-	}
-	return (cur);
 }
 
 /*

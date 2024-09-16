@@ -26,7 +26,6 @@ typedef struct s_stack
 {
 	node	*top;
 	int		size;
-	
 }	stack;
 
 /*============*/
@@ -47,7 +46,6 @@ char	*combine_str(int ac, char **av);
 /*push_swap utils*/
 
 void	err_and_exit(void);
-int		stack_is_sorted(stack *stack);
 void	show_content(char *name, stack *stack);
 
 /*==========*/
@@ -104,20 +102,25 @@ void	move_a_to_b(stack **stack_a, stack **stack_b);
 void	init_nodes_b(stack *stack_a, stack *stack_b);
 void	move_b_to_a(stack **stack_a, stack **stack_b);
 
-/*init nodes in A*/
+/*prepares nodes in stacks for pushing*/
 
-void	init_stack_b(stack **stack_b);
 void	set_target_a(stack *stack_a, stack *stack_b);
+void	init_stack_b(stack **stack_b);
+void	set_target_b(stack *stack_a, stack *stack_b);
 
 /*init and move utils*/
 
 void	index_median(stack *stack);
 void	set_cheapest(stack *stack);
-node	*get_cheapest(stack *stack);
+void	cost_calc(stack *stack);
 
 /*sort utils*/
+
 int		stack_is_sorted(stack *stack);
+
+/*find nodes (min max cheapest)*/
+
 node	*find_max(stack *stack);
 node	*find_min(stack *stack);
-
+node	*get_cheapest(stack *stack);
 #endif

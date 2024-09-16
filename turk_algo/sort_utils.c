@@ -1,5 +1,7 @@
 #include "../includes/push_swap.h"
 
+#include "../includes/push_swap.h"
+
 /*
 *boolean function
 *returns TRUE is stack is sorted, else FALSE
@@ -67,4 +69,22 @@ node	*find_min(stack *stack)
 		cur = cur->next;
 	}
 	return (min_node);
+}
+
+/*
+*locates and returns the cheapest node
+*searches for node with [cheapest = TRUE]
+*/
+node	*get_cheapest(stack *stack)
+{
+	node	*cur;
+
+	cur = stack->top;
+	while (cur)
+	{
+		if (cur->cheapest == TRUE)
+			break;
+		cur = cur->next;
+	}
+	return (cur);
 }
