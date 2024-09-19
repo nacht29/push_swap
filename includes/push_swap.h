@@ -113,6 +113,7 @@ void	set_target_b(stack *stack_a, stack *stack_b);
 void	index_median(stack *stack);
 void	set_cheapest(stack *stack);
 void	cost_calc(stack *src_stack, stack *targ_stack);
+void	bring_to_top(stack *stack, node *top_node, char stack_name);
 
 /*sort utils*/
 
