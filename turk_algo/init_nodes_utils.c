@@ -75,10 +75,30 @@ void	cost_calc(stack *src_stack, stack *targ_stack)
 	{
 		if (cur->above_median == TRUE)
 			cur->push_cost += cur->index;
+		if (cur->above_median == FALSE)
+			cur->push_cost += src_stack->size - cur->index;
 		if (cur->target_node->above_median == TRUE)
 			cur->push_cost += cur->target_node->index;
 		else
-			cur->push_cost += (targ_stack->size - cur->target_node->index);
+			cur->push_cost += targ_stack->size - cur->target_node->index;
 		cur = cur->next;
+	}
+}
+
+/*
+*used in conjunction with move_*to_* functions
+*individually works on stacks A and B to 
+bring a node to the top of the stack
+*/
+
+void	bring_to_top(stack *stack, node *top_node, char stack_name)
+{
+	while (stack->top != top_node)
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_median == TRUE)
+				rotate_a(stack);
+		}
 	}
 }

@@ -25,7 +25,7 @@ void	init_nodes_a(stack *stack_a, stack *stack_b)
 {
 	index_median(stack_a);
 	set_target_a(stack_a, stack_b);
-	cost_calc(stack_a);
+	cost_calc(stack_a, stack_b);
 	set_cheapest(stack_a);
 }
 
@@ -61,7 +61,12 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 		cur_a = cur_a->next;
 	}
 }
-
+/*
+*brings node in A and its target node above median
+*does not perform rotations if the first node is alr in the 
+correct pos
+*accounts for
+*/
 void	move_a_to_b(stack **stack_a, stack **stack_b)
 {
 	node	*cheapest;
