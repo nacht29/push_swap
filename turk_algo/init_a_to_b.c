@@ -82,4 +82,7 @@ void	move_a_to_b(stack **stack_a, stack **stack_b)
 		while ((*stack_a)->top != cheapest)
 			reverse_rotate_all(stack_a, stack_b);
 	}
+	bring_to_top(*stack_a, cheapest, 'a');
+	bring_to_top(stack_b, cheapest->target_node, 'b');
+	push_a_to_b(stack_a, stack_b);
 }
