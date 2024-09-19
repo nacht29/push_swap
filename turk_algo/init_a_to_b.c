@@ -62,10 +62,12 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 	}
 }
 /*
-*brings node in A and its target node above median
+*simultaneously brings node in A and its target node above median
 *does not perform rotations if the first node is alr in the 
 correct pos
-*accounts for
+*accounts for when the cheapest node is on top
+*then, work on individual stacks to bring the
+push node and target node to the top of the stack
 */
 void	move_a_to_b(stack **stack_a, stack **stack_b)
 {
