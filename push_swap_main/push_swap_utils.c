@@ -12,15 +12,15 @@ void	show_content(char *name, stack *stack)
 	int		size;
 
 	ft_printf("name: %s\n", name);
-	if (!(stack))
-	{
-		ft_printf("size: 0\n");
-		return ;
-	}
+	// if (!(stack))
+	// {
+	// 	ft_printf("size: 0\n");
+	// 	return ;
+	// }
 	cur = stack->top;
 	while (cur)
 	{
-		ft_printf("%i ", cur->num);
+		ft_printf("%i\n", cur->num);
 		cur = cur->next;
 	}
 	ft_printf("\n");

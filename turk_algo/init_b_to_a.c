@@ -40,6 +40,7 @@ void	set_target_b(stack *stack_a, stack *stack_b)
 			cur_b->target_node = find_min(stack_a);
 		else
 			cur_b->target_node = targ;
+		ft_printf("cur_b: %i targ: %i\n", cur_b->num, cur_b->target_node->num);
 		cur_b = cur_b->next;
 	}
 }
@@ -48,7 +49,6 @@ void	move_b_to_a(stack **stack_a, stack **stack_b)
 {
 	node	*b_top_node;
 
-	b_top_node = (*stack_b)->top;
-	bring_to_top(*stack_a, b_top_node->target_node, 'a');
+	bring_to_top(*stack_a, (*stack_b)->top->target_node, 'a');
 	push_b_to_a(stack_a, stack_b);
 }

@@ -48,6 +48,7 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 			cur_a->target_node = find_max(stack_b);
 		else	
 			cur_a->target_node = targ;
+		ft_printf("cur: %i targ: %i\n", cur_a->num, cur_a->target_node->num);
 		cur_a = cur_a->next;
 	}
 }
