@@ -36,7 +36,7 @@ void	set_target_b(stack *stack_a, stack *stack_b)
 			}
 			cur_a = cur_a->next;
 		}
-		if (closest_larger = INT_MAX)
+		if (closest_larger == INT_MAX)
 			cur_b->target_node = find_min(stack_a);
 		else
 			cur_b->target_node = targ;
