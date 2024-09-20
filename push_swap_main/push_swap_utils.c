@@ -24,12 +24,12 @@ void	show_content(char *name, stack *stack)
 		cur = cur->next;
 	}
 	ft_printf("\n");
-	cur = stack->top;
-	while (cur)
-	{
-		ft_printf("num: %i index: %i\n", cur->num, cur->index);
-		cur = cur->next;
-	}
+	// cur = stack->top;
+	// while (cur)
+	// {
+	// 	ft_printf("num: %i index: %i\n", cur->num, cur->index);
+	// 	cur = cur->next;
+	// }
 
 	size = 1;
 	/*

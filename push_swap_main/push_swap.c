@@ -21,7 +21,7 @@ int main(int ac, char *av[])
 			sort_stacks(&stack_a, &stack_b);
 	}
 	show_content("stack A", stack_a);
-	show_content("stack B", stack_b);
+	// show_content("stack B", stack_b);
 	ft_printf("stack_is_sorted: %i\n", stack_is_sorted(stack_a));
 }
 

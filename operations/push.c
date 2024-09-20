@@ -18,9 +18,9 @@ void	push_a_to_b(stack **stack_a, stack **stack_b)
 	temp->next = NULL;
 	add_to_top(*stack_b, temp);
 	(*stack_b)->size++;
-	ft_printf("pb\n");
 	index_median(*stack_a);
 	index_median(*stack_b);
+	ft_printf("pb\n");
 }
 
 /*
@@ -41,7 +41,7 @@ void	push_b_to_a(stack **stack_a, stack **stack_b)
 	temp->next = NULL;
 	add_to_top((*stack_a), temp);
 	(*stack_a)->size++;
-	ft_printf("pa\n");
 	index_median(*stack_a);
 	index_median(*stack_b);
+	ft_printf("pa\n");
 }

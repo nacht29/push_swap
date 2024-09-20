@@ -54,7 +54,8 @@ val: re
 	@valgrind ./push_swap 10 9 8 7 6 5 4 3 2 1
 
 test: re
-	./push_swap 10 9 8 7 6 5 4 3 2 1 > op.txt
+	 ./push_swap 10 9 8 7 6 5 4 3 2 1 > out.txt
+	# ./push_swap 10 9 8 7 6 5 4 3 2 1
 
 FORCE:
 

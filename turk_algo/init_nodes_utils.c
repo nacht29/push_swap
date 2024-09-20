@@ -75,8 +75,8 @@ void	cost_calc(stack *src_stack, stack *targ_stack)
 	{
 		if (cur->above_median == TRUE)
 			cur->push_cost += cur->index;
-		if (cur->above_median == FALSE)
-			cur->push_cost += src_stack->size - cur->index;
+		// if (cur->above_median == FALSE)
+		// 	cur->push_cost += src_stack->size - cur->index;
 		if (cur->target_node->above_median == TRUE)
 			cur->push_cost += cur->target_node->index;
 		else

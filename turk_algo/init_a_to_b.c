@@ -27,6 +27,7 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 {
 	node	*cur_a;
 	node	*cur_b;
+	node	*targ;
 	int		closest_smaller;
 
 	cur_a = stack_a->top;
@@ -39,12 +40,14 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 			if (cur_b->num < cur_a->num && cur_b->num > closest_smaller)
 			{
 				closest_smaller = cur_b->num;
-				cur_a->target_node = cur_b;
+				targ = cur_b;
 			}
 			cur_b = cur_b->next;
 		}
 		if (closest_smaller = INT_MIN)
 			cur_a->target_node = find_max(stack_b);
+		else	
+			cur_a->target_node = targ;
 		cur_a = cur_a->next;
 	}
 }

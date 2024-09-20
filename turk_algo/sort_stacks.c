@@ -8,17 +8,18 @@
 void	sort_stacks(stack **stack_a, stack **stack_b)
 {
 	init_stack_b(stack_b);
+	if (stack_is_sorted(*stack_a) == TRUE)
+		return ;
 	if ((*stack_a)->size > 3)
 		push_a_to_b(stack_a, stack_b);
 	if ((*stack_a)->size > 3)
 		push_a_to_b(stack_a, stack_b);
-	while ((*stack_a)->size > 3)
+	while ((*stack_a)->size > 3 && stack_is_sorted(*stack_a) == FALSE)
 	{
 		init_nodes_a(*stack_a, *stack_b);
 		move_a_to_b(stack_a, stack_b);
 	}
-	if ((*stack_a)->size == 3)
-		sort_three(stack_a);
+	sort_three(stack_a);
 	while ((*stack_b)->top)
 	{
 		init_nodes_b(*stack_a, *stack_b);
