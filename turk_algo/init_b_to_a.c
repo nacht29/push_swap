@@ -3,6 +3,9 @@
 void	init_nodes_b(stack *stack_a, stack *stack_b)
 {
 	index_median(stack_b);
+	set_target_b(stack_a, stack_b);
+	// cost_calc(stack_b, stack_a);
+	// set_cheapest(stack_b);
 }
 
 /*
@@ -36,4 +39,24 @@ void	set_target_b(stack *stack_a, stack *stack_b)
 				cur_b->target_node = find_min(stack_a);
 		cur_b = cur_b->next;
 	}
+}
+
+void	move_b_to_a(stack **stack_a, stack **stack_b)
+{
+	node	*cheapest;
+
+	cheapest = get_cheapest(*stack_b);
+	if (cheapest->above_median && cheapest->target_node->above_median)
+	{
+		while ((*stack_b)->top != cheapest)
+			rotate_all(stack_a, stack_b);
+	}
+	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+	{
+		while ((*stack_b)->top != cheapest)
+			reverse_rotate_all(stack_a, stack_b);
+	}
+	bring_to_top(*stack_b, cheapest, 'b');
+	bring_to_top(*stack_a, cheapest->target_node, 'a');
+	push_b_to_a(stack_a, stack_b);
 }

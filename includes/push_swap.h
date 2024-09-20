@@ -97,16 +97,22 @@ void	sort_three(stack **stack_a);
 // main sorting process
 
 void	sort_stacks(stack **stack_a, stack **stack_b);
-void	init_nodes_a(stack *stack_a, stack *stack_b);
-void	move_a_to_b(stack **stack_a, stack **stack_b);
 void	init_nodes_b(stack *stack_a, stack *stack_b);
 void	move_b_to_a(stack **stack_a, stack **stack_b);
 
-/*prepares nodes in stacks for pushing*/
+/*initiate nodes and push*/
+// push from a to b
 
-void	set_target_a(stack *stack_a, stack *stack_b);
 void	init_stack_b(stack **stack_b);
+void	init_nodes_a(stack *stack_a, stack *stack_b);
+void	set_target_a(stack *stack_a, stack *stack_b);;
+void	move_a_to_b(stack **stack_a, stack **stack_b);
+
+// push from b to a
+
+void	init_nodes_b(stack *stack_a, stack *stack_b);
 void	set_target_b(stack *stack_a, stack *stack_b);
+void	move_b_to_a(stack **stack_a, stack **stack_b);
 
 /*init and move utils*/
 
@@ -118,9 +124,6 @@ void	bring_to_top(stack *stack, node *top_node, char stack_name);
 /*sort utils*/
 
 int		stack_is_sorted(stack *stack);
-
-/*find nodes (min max cheapest)*/
-
 node	*find_max(stack *stack);
 node	*find_min(stack *stack);
 node	*get_cheapest(stack *stack);

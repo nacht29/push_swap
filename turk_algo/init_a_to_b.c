@@ -1,19 +1,6 @@
 #include "../includes/push_swap.h"
 
 /*
-*for sorting > 3
-*mallocs and initiates stack b
-*/
-void	init_stack_b(stack **stack_b)
-{
-	*stack_b = (stack *)malloc(sizeof(stack));
-	if (!(*stack_b) || !stack_b)
-		err_and_exit();
-	(*stack_b)->top = NULL;
-	(*stack_b)->size = 0;
-}
-
-/*
 *sets the remaining values in each node in A
 *sets:
 -median

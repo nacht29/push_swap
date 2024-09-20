@@ -3,6 +3,7 @@
 /*
 *sorts > 3
 *initiates stack B for use
+*already checked, no need to run index_median here
 */
 void	sort_stacks(stack **stack_a, stack **stack_b)
 {
@@ -21,12 +22,19 @@ void	sort_stacks(stack **stack_a, stack **stack_b)
 	{
 		init_nodes_b(*stack_a, *stack_b);
 		move_b_to_a(stack_a, stack_b);
-		break ;
+		// break;
 	}
 }
 
-void	move_b_to_a(stack **stack_a, stack **stack_b)
+/*
+*for sorting > 3
+*mallocs and initiates stack b
+*/
+void	init_stack_b(stack **stack_b)
 {
-	push_b_to_a(stack_a, stack_b);
-	return ;
+	*stack_b = (stack *)malloc(sizeof(stack));
+	if (!(*stack_b) || !stack_b)
+		err_and_exit();
+	(*stack_b)->top = NULL;
+	(*stack_b)->size = 0;
 }

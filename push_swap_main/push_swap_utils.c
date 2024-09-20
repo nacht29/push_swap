@@ -32,7 +32,7 @@ void	show_content(char *name, stack *stack)
 	*/
 	while (cur)
 	{
-		ft_printf("num: %i\n", cur->num);
+		ft_printf("num: %i index: %i\n", cur->num, cur->index);
 		cur = cur->next;
 	}
 }

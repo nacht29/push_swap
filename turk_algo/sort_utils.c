@@ -1,7 +1,5 @@
 #include "../includes/push_swap.h"
 
-#include "../includes/push_swap.h"
-
 /*
 *boolean function
 *returns TRUE is stack is sorted, else FALSE

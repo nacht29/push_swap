@@ -50,7 +50,11 @@ clear:
 re: clear fclean all
 
 val: re
-	@valgrind --leak-check=yes ./push_swap 3 2 1 4 5
+	@#valgrind --leak-check=yes ./push_swap 20 18 15 17 13 11 9 10 2 1 3 4 5 8 7
+	@valgrind ./push_swap 20 18 15 17 13 11 9 10 2 1 3 4 5 8 7
+
+test: re
+	./push_swap 20 18 15 17 13 11 9 10 2 1 3 4 5 8 7
 
 FORCE:
 
