@@ -18,6 +18,19 @@ void	show_content(char *name, stack *stack)
 		return ;
 	}
 	cur = stack->top;
+	while (cur)
+	{
+		ft_printf("%i ", cur->num);
+		cur = cur->next;
+	}
+	ft_printf("\n");
+	cur = stack->top;
+	while (cur)
+	{
+		ft_printf("num: %i index: %i\n", cur->num, cur->index);
+		cur = cur->next;
+	}
+
 	size = 1;
 	/*
 	while (cur)
@@ -30,11 +43,6 @@ void	show_content(char *name, stack *stack)
 		cur = cur->next;
 	}
 	*/
-	while (cur)
-	{
-		ft_printf("num: %i index: %i\n", cur->num, cur->index);
-		cur = cur->next;
-	}
 }
 
 /*

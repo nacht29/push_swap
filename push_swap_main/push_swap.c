@@ -22,6 +22,7 @@ int main(int ac, char *av[])
 	}
 	show_content("stack A", stack_a);
 	show_content("stack B", stack_b);
+	ft_printf("stack_is_sorted: %i\n", stack_is_sorted(stack_a));
 }
 
 void	init_stack_a(int ac, char **av, stack **stack_a)

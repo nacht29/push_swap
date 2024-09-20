@@ -60,7 +60,11 @@ void	move_a_to_b(stack **stack_a, stack **stack_b)
 {
 	node	*cheapest;
 
+	if (!stack_a || !(*stack_a) || !(*stack_a)->top)
+		return ;
 	cheapest = get_cheapest(*stack_a);
+	if (!cheapest)
+		return	;
 	if (cheapest->above_median && cheapest->target_node->above_median)
 	{
 		while ((*stack_a)->top != cheapest)

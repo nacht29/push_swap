@@ -97,13 +97,12 @@ void	sort_three(stack **stack_a);
 // main sorting process
 
 void	sort_stacks(stack **stack_a, stack **stack_b);
-void	init_nodes_b(stack *stack_a, stack *stack_b);
-void	move_b_to_a(stack **stack_a, stack **stack_b);
+void	init_stack_b(stack **stack_b);
+void	min_on_top(stack *stack_a);
 
 /*initiate nodes and push*/
 // push from a to b
 
-void	init_stack_b(stack **stack_b);
 void	init_nodes_a(stack *stack_a, stack *stack_b);
 void	set_target_a(stack *stack_a, stack *stack_b);;
 void	move_a_to_b(stack **stack_a, stack **stack_b);
