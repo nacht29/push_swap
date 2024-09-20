@@ -35,23 +35,34 @@ void	set_target_a(stack *stack_a, stack *stack_b)
 	{
 		cur_b = stack_b->top;
 		closest_smaller = INT_MIN;
+		ft_printf("cur_a: %i\n", cur_a->num);
 		while (cur_b)
 		{
-			if (cur_b->num < cur_a->num && cur_b->num > closest_smaller)
+			if ((cur_b->num < cur_a->num) && (cur_b->num > closest_smaller))
 			{
 				closest_smaller = cur_b->num;
+				ft_printf("closest_smaller: %i\n", closest_smaller);
 				targ = cur_b;
+				ft_printf("targ: %i\n", targ->num);
 			}
 			cur_b = cur_b->next;
 		}
+		ft_printf("closest_smaller b4 setting: %i\n", closest_smaller);
 		if (closest_smaller = INT_MIN)
+		{
 			cur_a->target_node = find_max(stack_b);
-		else	
+			ft_printf("if happened\n");
+		}
+		else
+		{
 			cur_a->target_node = targ;
-		ft_printf("cur: %i targ: %i\n", cur_a->num, cur_a->target_node->num);
+			ft_printf("else happened\n");
+		}
+		ft_printf("\n");
 		cur_a = cur_a->next;
 	}
 }
+
 /*
 *simultaneously brings node in A and its target node above median
 *does not perform rotations if the first node is alr in the 

@@ -40,7 +40,6 @@ void	set_target_b(stack *stack_a, stack *stack_b)
 			cur_b->target_node = find_min(stack_a);
 		else
 			cur_b->target_node = targ;
-		ft_printf("cur_b: %i targ: %i\n", cur_b->num, cur_b->target_node->num);
 		cur_b = cur_b->next;
 	}
 }
