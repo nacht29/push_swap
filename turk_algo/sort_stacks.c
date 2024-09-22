@@ -18,14 +18,12 @@ void	sort_stacks(stack **stack_a, stack **stack_b)
 	{
 		init_nodes_a(*stack_a, *stack_b);
 		move_a_to_b(stack_a, stack_b);
-		// show_content("stack_a", *stack_a);
 	}
 	sort_three(stack_a);
 	while ((*stack_b)->top)
 	{
 		init_nodes_b(*stack_a, *stack_b);
 		move_b_to_a(stack_a, stack_b);
-		// show_content("stack_b", *stack_b);
 	}
 	min_on_top(*stack_a);
 }

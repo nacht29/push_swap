@@ -1,7 +1,8 @@
 NAME = push_swap
 
 SRCS = $(wildcard push_swap_main/*.c init_parse/*.c turk_algo/*.c operations/*.c)
-OBJS = ${SRCS:.c=.o}
+OBJS_DIR = obj/
+OBJS = $(patsubst %.c,$(OBJS_DIR)%.o,$(notdir $(SRCS)))
 
 HEADER = -Iincludes
 
@@ -9,11 +10,13 @@ LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
-%.o: %.c
-	@# $(CC) $(CFLAGS) $(HEADER) -c $< -o $@
-	$(CC) $(HEADER) -c $< -o $@
+vpath %.c push_swap_main:init_parse:turk_algo:operations
+
+$(OBJS_DIR)%.o: %.c
+	@mkdir -p $(OBJS_DIR)
+	$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
 
 GREEN = \033[1;32m
 YELLOW = \033[1;33m
@@ -35,7 +38,7 @@ $(LIBFT): FORCE
 
 clean:
 	@make clean -C $(LIBFT_DIR) -s
-	@rm -f $(OBJS)
+	@rm -rf $(OBJS_DIR)
 	@echo "$(PURPLE)clean successful$(RESET)"
 
 fclean: clean
@@ -50,7 +53,6 @@ clear:
 re: clear fclean all
 
 val: re
-	@#valgrind --leak-check=yes ./push_swap 99 0 25 -38 10 7 42 > out.txt
 	@valgrind ./push_swap 99 0 25 -38 10 7 42 > out.txt
 
 test: re
