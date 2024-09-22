@@ -20,7 +20,7 @@ void	show_content(char *name, stack *stack)
 	cur = stack->top;
 	while (cur)
 	{
-		ft_printf("%i\n", cur->num);
+		ft_printf("%i cost: %i\n", cur->num, cur->push_cost);
 		cur = cur->next;
 	}
 	ft_printf("\n");

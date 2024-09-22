@@ -20,7 +20,7 @@ int main(int ac, char *av[])
 		else
 			sort_stacks(&stack_a, &stack_b);
 	}
-	show_content("stack_a", stack_a);
+	// show_content("stack_a", stack_a);
 }
 
 void	init_stack_a(int ac, char **av, stack **stack_a)
