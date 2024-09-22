@@ -11,7 +11,7 @@ void	show_content(char *name, stack *stack)
 	node	*cur;
 	int		size;
 
-	ft_printf("name: %s\n", name);
+	// ft_printf("name: %s\n", name);
 	// if (!(stack))
 	// {
 	// 	ft_printf("size: 0\n");
@@ -21,9 +21,10 @@ void	show_content(char *name, stack *stack)
 	while (cur)
 	{
 		ft_printf("%i cost: %i\n", cur->num, cur->push_cost);
+		// ft_printf("%i\n", cur->num);
 		cur = cur->next;
 	}
-	ft_printf("\n");
+	// ft_printf("\n");
 	// cur = stack->top;
 	// while (cur)
 	// {

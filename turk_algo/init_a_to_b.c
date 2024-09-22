@@ -11,9 +11,10 @@
 void	init_nodes_a(stack *stack_a, stack *stack_b)
 {
 	index_median(stack_a);
+	index_median(stack_b);
 	set_target_a(stack_a, stack_b);
 	cost_calc(stack_a, stack_b);
-	show_content("stack_a", stack_a);
+	// show_content("stack_a", stack_a);
 	set_cheapest(stack_a);
 }
 
@@ -68,18 +69,18 @@ void	move_a_to_b(stack **stack_a, stack **stack_b)
 	if (!stack_a || !(*stack_a) || !(*stack_a)->top)
 		return ;
 	cheapest = get_cheapest(*stack_a);
-	ft_printf("cheapest: %i targ: %i\n", cheapest->num, cheapest->target_node->num);
+	// ft_printf("cheapest: %i targ: %i\n", cheapest->num, cheapest->target_node->num);
 	if (!cheapest)
 		return	;
-	if (cheapest->above_median && cheapest->target_node->above_median)
+	while ((*stack_a)->top != cheapest)
 	{
-		while ((*stack_a)->top != cheapest)
+		if (cheapest->above_median && cheapest->target_node->above_median)
 			rotate_all(stack_a, stack_b);
-	}
-	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
-	{
-		while ((*stack_a)->top != cheapest)
+		else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
 			reverse_rotate_all(stack_a, stack_b);
+		else
+			break ;
+
 	}
 	bring_to_top(*stack_a, cheapest, 'a');
 	bring_to_top(*stack_b, cheapest->target_node, 'b');

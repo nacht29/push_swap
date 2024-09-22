@@ -2,6 +2,7 @@
 
 void	init_nodes_b(stack *stack_a, stack *stack_b)
 {
+	index_median(stack_a);
 	index_median(stack_b);
 	set_target_b(stack_a, stack_b);
 	// cost_calc(stack_b, stack_a);

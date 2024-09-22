@@ -11,6 +11,8 @@ void	index_median(stack *stack)
 	int		median;
 	int		i;
 
+	if (!stack || !(stack->top))
+		return ;
 	cur = stack->top;
 	median = stack->size / 2;
 	i = 0;
@@ -66,21 +68,43 @@ to the other
 the push node and its target node to the correct pos
 (most likely on top of the stack)
 */
-void	cost_calc(stack *src_stack, stack *targ_stack)
-{
-	node	*cur;
+// void	cost_calc(stack *src_stack, stack *targ_stack)
+// {
+// 	node	*cur;
 
-	cur = src_stack->top;
+// 	cur = src_stack->top;
+// 	while (cur)
+// 	{
+// 		if (cur->above_median == TRUE)
+// 			cur->push_cost += cur->index;
+// 		// if (cur->above_median == FALSE)
+// 		// 	cur->push_cost += src_stack->size - cur->index;
+// 		if (cur->target_node->above_median == TRUE)
+// 			cur->push_cost += cur->target_node->index;
+// 		else
+// 			cur->push_cost += targ_stack->size - cur->target_node->index;
+// 		cur = cur->next;
+// 	}
+// }
+
+void	cost_calc(stack *stack_a, stack *stack_b)
+{
+	int	size_a;
+	int	size_b;
+	node *cur;
+
+	size_a = stack_a->size;
+	size_b = stack_b->size;
+	cur = stack_a->top;
 	while (cur)
 	{
-		if (cur->above_median == TRUE)
-			cur->push_cost += cur->index;
-		// if (cur->above_median == FALSE)
-		// 	cur->push_cost += src_stack->size - cur->index;
+		cur->push_cost = cur->index;
+		if (cur->above_median == FALSE)
+			cur->push_cost = size_a - (cur->index);
 		if (cur->target_node->above_median == TRUE)
 			cur->push_cost += cur->target_node->index;
 		else
-			cur->push_cost += targ_stack->size - cur->target_node->index;
+			cur->push_cost += size_b - (cur->target_node->index);
 		cur = cur->next;
 	}
 }
