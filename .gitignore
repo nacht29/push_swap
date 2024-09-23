@@ -56,3 +56,6 @@ dkms.conf
 push_swap
 *.out
 a.out
+
+push_swap_ref/*
+push_swap_ref
