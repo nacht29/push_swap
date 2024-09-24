@@ -20,8 +20,6 @@ int main(int ac, char *av[])
 		else
 			sort_stacks(&stack_a, &stack_b);
 	}
-	// show_content("stack_a", stack_a);
-	// ft_printf("is sorted: %i\n", stack_is_sorted(stack_a));
 }
 
 void	init_stack_a(int ac, char **av, stack **stack_a)
@@ -55,4 +53,10 @@ void	parse_stack_a(int ac, char **av, stack **stack_a)
 		(*stack_a)->size++;
 		i++;
 	}
+}
+
+void	err_and_exit(void)
+{
+	ft_putendl_fd("Error", STDERR_FILENO);
+	exit(EXIT_FAILURE);
 }
