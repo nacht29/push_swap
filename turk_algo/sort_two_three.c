@@ -10,7 +10,7 @@ void	sort_two(stack **stack_a)
 		return ;
 	cur = (*stack_a)->top;
 	if (cur->num > cur->next->num)
-		swap_a(stack_a);
+		swap_a(stack_a, TRUE);
 }
 
 void	sort_three(stack **stack_a)
@@ -21,9 +21,9 @@ void	sort_three(stack **stack_a)
 		return ;
 	biggest_node = find_max(*stack_a);
 	if (biggest_node == (*stack_a)->top)
-		rotate_a(stack_a);
+		rotate_a(stack_a, TRUE);
 	if (biggest_node == (*stack_a)->top->next)
-		reverse_rotate_a(stack_a);
+		reverse_rotate_a(stack_a, TRUE);
 	if ((*stack_a)->top->num > (*stack_a)->top->next->num)
-		swap_a(stack_a);
+		swap_a(stack_a, TRUE);
 }

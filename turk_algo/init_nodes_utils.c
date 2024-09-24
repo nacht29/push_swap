@@ -104,16 +104,16 @@ void	bring_to_top(stack *stack, node *top_node, char stack_name)
 		if (stack_name == 'a')
 		{
 			if (top_node->above_median == TRUE)
-				rotate_a(&stack);
+				rotate_a(&stack, TRUE);
 			else
-				reverse_rotate_a(&stack);
+				reverse_rotate_a(&stack, TRUE);
 		}
 		else if (stack_name == 'b')
 		{
 			if (top_node->above_median == TRUE)
-				rotate_b(&stack);
+				rotate_b(&stack, TRUE);
 			else
-				reverse_rotate_b(&stack);
+				reverse_rotate_b(&stack, TRUE);
 		}
 	}
 }

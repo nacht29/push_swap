@@ -16,7 +16,7 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	rotate_a(stack **stack_a)
+void	rotate_a(stack **stack_a, int print)
 {
 	node	*first_node;
 	// node	*current;
@@ -29,7 +29,8 @@ void	rotate_a(stack **stack_a)
 	first_node->next = NULL;
 	add_to_bottom(*stack_a, first_node);
 	index_median(*stack_a);
-	ft_printf("ra\n");
+	if (print == TRUE)
+		ft_printf("ra\n");
 }
 
 /*
@@ -48,7 +49,7 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	rotate_b(stack **stack_b)
+void	rotate_b(stack **stack_b, int print)
 {
 	node	*first_node;
 	// node	*current;
@@ -61,7 +62,8 @@ void	rotate_b(stack **stack_b)
 	first_node->next = NULL;
 	add_to_bottom(*stack_b, first_node);
 	index_median(*stack_b);
-	ft_printf("rb\n");
+	if (print == TRUE)
+		ft_printf("rb\n");
 }
 
 /*
@@ -69,7 +71,7 @@ void	rotate_b(stack **stack_b)
 */
 void	rotate_all(stack **stack_a, stack **stack_b)
 {
-	rotate_a(stack_a);
-	rotate_b(stack_b);
+	rotate_a(stack_a, FALSE);
+	rotate_b(stack_b, FALSE);
 	ft_printf("rr\n");
 }

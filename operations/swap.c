@@ -25,13 +25,14 @@ static void	swap_nodes(stack **stack)
 *n1 = n2
 *n2 = temp;
 */
-void	swap_a(stack **stack_a)
+void	swap_a(stack **stack_a, int print)
 {
 
 	if (!((*stack_a)->top) || !((*stack_a)->top->next))
 		return ;
 	swap_nodes(stack_a);
-	ft_printf("sa\n");
+	if (print == TRUE)
+		ft_printf("sa\n");
 }
 
 /*
@@ -42,7 +43,7 @@ void	swap_a(stack **stack_a)
 *n1 = n2
 *n2 = temp;
 */
-void	swap_b(stack **stack_b)
+void	swap_b(stack **stack_b, int print)
 {
 
 	if (!((*stack_b)->top) || !((*stack_b)->top->next))
@@ -58,7 +59,7 @@ void	swap_all(stack **stack_a, stack **stack_b)
 {
 	if (!(*stack_a) || !(*stack_b))
 		return	;
-	swap_a(stack_a);
-	swap_b(stack_b);
+	swap_a(stack_a, FALSE);
+	swap_b(stack_b, FALSE);
 	ft_printf("ss\n");
 }

@@ -50,8 +50,8 @@ void	min_on_top(stack *stack_a)
 	{
 		index_median(stack_a);
 		if (min->above_median == TRUE)
-			rotate_a(&stack_a);
+			rotate_a(&stack_a, TRUE);
 		else
-			reverse_rotate_a(&stack_a);
+			reverse_rotate_a(&stack_a, TRUE);
 	}
 }
