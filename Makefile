@@ -73,15 +73,6 @@ bre: re bonus
 val: re
 	@valgrind ./push_swap 99 0 25 -38 10 7 42 > out.txt
 
-test: re
-	./push_swap 15 20 5 9 11 16 17 14 4 13 6 12 19 7 8 3 10 18 1 2
-
-btest: bre
-	ARGS="15 20 5 9 11 16 17 14 4 13 6 12 19 7 8 3 10 18 1 2"; ./push_swap $$ARGS | ./checker $$ARGS
-
-comp:
-	ARGS="15 20 5 9 11 16 17 14 4 13 6 12 19 7 8 3 10 18 1 2"; ./push_swap $$ARGS | ./checker_linux $$ARGS
-
 FORCE:
 
 .PHONY: all bonus clean fclean re val test
