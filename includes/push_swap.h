@@ -43,10 +43,10 @@ int		parse_check(char *num_str, stack *stack);
 void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str);
 char	*combine_str(int ac, char **av);
 
-/*push_swap utils*/
+/*utils*/
 
 void	err_and_exit(void);
-void	show_content(char *name, stack *stack);
+void	free_str_arr(char ***str_arr);
 
 /*==========*/
 /*OPERATIONS*/

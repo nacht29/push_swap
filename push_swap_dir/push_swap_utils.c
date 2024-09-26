@@ -1,7 +1,5 @@
 #include "../includes/push_swap.h"
 
-static void	free_str_arr(char ***str_arr);
-
 void	init_stack_a(int ac, char **av, stack **stack_a)
 {
 	*stack_a = (stack *)malloc(sizeof(stack));
@@ -43,7 +41,7 @@ void	err_and_exit(void)
 	exit(EXIT_FAILURE);
 }
 
-static void	free_str_arr(char ***str_arr)
+void	free_str_arr(char ***str_arr)
 {
 	int	i;
 
