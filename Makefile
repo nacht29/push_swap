@@ -15,7 +15,7 @@ LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)libft.a
 
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 vpath %.c push_swap_dir:init_parse:turk_algo:operations:checker_dir:main_file
 
@@ -70,8 +70,8 @@ re: clear fclean all
 
 bre: re bonus
 
-val: re
-	@valgrind ./push_swap 99 0 25 -38 10 7 42 > out.txt
+val: bre
+	@./push_swap 99 0 25 -38 10 7 42 > out.txt | valgrind --leak-check=yes ./checker 99 0 25 -38 10 7 42
 
 FORCE:
 

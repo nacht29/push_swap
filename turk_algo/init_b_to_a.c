@@ -5,8 +5,6 @@ void	init_nodes_b(stack *stack_a, stack *stack_b)
 	index_median(stack_a);
 	index_median(stack_b);
 	set_target_b(stack_a, stack_b);
-	// cost_calc(stack_b, stack_a);
-	// set_cheapest(stack_b);
 }
 
 /*
@@ -47,8 +45,6 @@ void	set_target_b(stack *stack_a, stack *stack_b)
 
 void	move_b_to_a(stack **stack_a, stack **stack_b)
 {
-	node	*b_top_node;
-
 	bring_to_top(*stack_a, (*stack_b)->top->target_node, 'a');
 	push_b_to_a(stack_a, stack_b);
 }

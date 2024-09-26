@@ -49,7 +49,8 @@ void	swap_b(stack **stack_b, int print)
 	if (!((*stack_b)->top) || !((*stack_b)->top->next))
 		return ;
 	swap_nodes(stack_b);
-	ft_printf("sb\n");
+	if (print == TRUE)
+		ft_printf("sb\n");
 }
 
 /*

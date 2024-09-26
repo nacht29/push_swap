@@ -20,4 +20,8 @@ int main(int ac, char *av[])
 		else
 			sort_stacks(&stack_a, &stack_b);
 	}
+	free_whole_stack(&stack_a);
+	free(stack_a);
+	free_whole_stack(&stack_b);
+	free(stack_b);
 }
