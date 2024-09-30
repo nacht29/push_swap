@@ -37,7 +37,7 @@ typedef struct s_stack
 void	init_stack_a(int ac, char **av, stack **stack_a);
 void	parse_stack_a(int ac, char **av, stack **stack_a);
 
-/*parsing check*/
+/*parse check*/
 
 int		parse_check(char *num_str, stack *stack);
 void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str);

@@ -1,11 +1,11 @@
 NAME = push_swap
 B_NAME = checker
 
-SRCS = $(wildcard main_file/push_swap.c push_swap_dir/*.c init_parse/*.c turk_algo/*.c operations/*.c)
+SRCS = $(wildcard main_file/push_swap.c parsing/*.c init_parse/*.c turk_algo/*.c operations/*.c)
 OBJS_DIR = obj/
 OBJS = $(patsubst %.c,$(OBJS_DIR)%.o,$(notdir $(SRCS)))
 
-B_SRCS = $(wildcard main_file/checker.c checker_dir/*.c push_swap_dir/*.c init_parse/*.c turk_algo/*.c operations/*.c)
+B_SRCS = $(wildcard main_file/checker.c checker_dir/*.c parsing/*.c init_parse/*.c turk_algo/*.c operations/*.c)
 B_OBJS_DIR = b_obj/
 B_OBJS = $(patsubst %.c,$(B_OBJS_DIR)%.o,$(notdir $(B_SRCS)))
 
@@ -17,7 +17,7 @@ LIBFT = $(LIBFT_DIR)libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-vpath %.c push_swap_dir:init_parse:turk_algo:operations:checker_dir:main_file
+vpath %.c parsing:init_parse:turk_algo:operations:checker_dir:main_file
 
 $(OBJS_DIR)%.o: %.c
 	@mkdir -p $(OBJS_DIR)
