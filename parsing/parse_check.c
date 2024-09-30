@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:42:42 by yachan            #+#    #+#             */
-/*   Updated: 2024/09/30 17:43:01 by yachan           ###   ########.fr       */
+/*   Updated: 2024/10/01 00:14:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,14 @@ char	*combine_str(int ac, char **av)
 
 static int	is_num_str(char *s)
 {
-	if (*s == '+' || *s == '-')
-		s++;
-	while (ft_isdigit(*s) == 1)
-		s++;
-	if (*s == '\0')
+	int	i;
+
+	i = 0;
+	if (s[i] == '+' || s[i] == '-')
+		i++;
+	while (ft_isdigit(s[i]) == 1)
+		i++;
+	if (s[i] == '\0' && ft_isdigit(s[i - 1]) == 1)
 		return (TRUE);
 	return (FALSE);
 }
