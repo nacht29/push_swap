@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ck_push.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:54:17 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:54:17 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/checker.h"
 
 /*
@@ -6,12 +18,12 @@
 *size A -1
 *add_to_top: size B +1
 */
-void	ck_push_a_to_b(stack **stack_a, stack **stack_b)
+void	ck_push_a_to_b(t_stack **stack_a, t_stack **stack_b)
 {
-	node	*temp;
+	t_node	*temp;
 
 	if (!(*stack_a) || !((*stack_a)->top))
-		return;
+		return ;
 	temp = (*stack_a)->top;
 	(*stack_a)->top = (*stack_a)->top->next;
 	(*stack_a)->size--;
@@ -26,12 +38,12 @@ void	ck_push_a_to_b(stack **stack_a, stack **stack_b)
 *size B -1
 *add_to_top: size A +1
 */
-void	ck_push_b_to_a(stack **stack_a, stack **stack_b)
+void	ck_push_b_to_a(t_stack **stack_a, t_stack **stack_b)
 {
-	node	*temp;
+	t_node	*temp;
 
 	if (!(*stack_b) || !((*stack_b)->top))
-		return;
+		return ;
 	temp = (*stack_b)->top;
 	(*stack_b)->top = (*stack_b)->top->next;
 	(*stack_b)->size--;

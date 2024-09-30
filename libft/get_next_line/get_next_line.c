@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 18:28:32 by yachan            #+#    #+#             */
-/*   Updated: 2024/09/26 13:24:50 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/30 18:01:31 by yachan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*get_next_line(int fd)
 {
-	static t_node	*lst[OP];
+	static t_nodes	*lst[OP];
 	char			*temp_buff;
 	char			*next_line;
 	int				read_result;
@@ -35,11 +35,11 @@ char	*get_next_line(int fd)
 	return (next_line);
 }
 
-int	read_to_list(t_node **lst, int fd)
+int	read_to_list(t_nodes **lst, int fd)
 {
 	int		char_read;
 	char	*buffer;
-	t_node	*current;
+	t_nodes	*current;
 
 	while (1)
 	{
@@ -63,12 +63,12 @@ int	read_to_list(t_node **lst, int fd)
 	}
 }
 
-void	add_node(t_node **lst, char *buffer)
+void	add_node(t_nodes **lst, char *buffer)
 {
-	t_node	*new_node;
-	t_node	*end;
+	t_nodes	*new_node;
+	t_nodes	*end;
 
-	new_node = (t_node *)malloc(sizeof(t_node));
+	new_node = (t_nodes *)malloc(sizeof(t_nodes));
 	if (!new_node)
 		return ;
 	new_node->str = ft_strjoin("", buffer);
@@ -84,7 +84,7 @@ void	add_node(t_node **lst, char *buffer)
 	end->next = new_node;
 }
 
-static char	*process_newline_node(t_node *lst, char **temp_buff, char *line)
+static char	*process_newline_node(t_nodes *lst, char **temp_buff, char *line)
 {
 	size_t	i;
 	char	*temp;
@@ -103,7 +103,7 @@ static char	*process_newline_node(t_node *lst, char **temp_buff, char *line)
 	return (new_line);
 }
 
-char	*extract_line(t_node *lst, char **temp_buff)
+char	*extract_line(t_nodes *lst, char **temp_buff)
 {
 	char	*line;
 	char	*temp;

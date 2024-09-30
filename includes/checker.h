@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:19:25 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:19:25 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHEKCER_H
 # define CHEKCER_H
 
@@ -17,21 +29,21 @@
 /*=======*/
 
 /*checker*/
-void	checker(stack *og_stack_a, stack *ck_stack_b);
-void	checking_process(char **operations, stack *og_stack_a, stack *ck_stack_b);
-void	exec_oper(stack **og_stack_a, stack **ck_stack_b, char *oper);
+void	checker(t_stack *og_stack_a, t_stack *ck_stack_b);
+void	checking_process(char **operations, t_stack *og_stack_a, t_stack *ck_stack_b);
+void	exec_oper(t_stack **og_stack_a, t_stack **ck_stack_b, char *oper);
 int		is_oper(char **operations, char *s);
 
 /*operations*/
-void	ck_push_a_to_b(stack **stack_a, stack **stack_b);
-void	ck_push_b_to_a(stack **stack_a, stack **stack_b);
-void	ck_swap_a(stack **stack_a);
-void	ck_swap_b(stack **stack_b);
-void	ck_swap_all(stack **stack_a, stack **stack_b);
-void	ck_rotate_a(stack **stack_a);
-void	ck_rotate_b(stack **stack_b);
-void	ck_rotate_all(stack **stack_a, stack **stack_b);
-void	ck_reverse_rotate_a(stack **stack_a);
-void	ck_reverse_rotate_b(stack **stack_b);
-void	ck_reverse_rotate_all(stack **stack_a, stack **stack_b);
+void	ck_push_a_to_b(t_stack **stack_a, t_stack **stack_b);
+void	ck_push_b_to_a(t_stack **stack_a, t_stack **stack_b);
+void	ck_swap_a(t_stack **stack_a);
+void	ck_swap_b(t_stack **stack_b);
+void	ck_swap_all(t_stack **stack_a, t_stack **stack_b);
+void	ck_rotate_a(t_stack **stack_a);
+void	ck_rotate_b(t_stack **stack_b);
+void	ck_rotate_all(t_stack **stack_a, t_stack **stack_b);
+void	ck_reverse_rotate_a(t_stack **stack_a);
+void	ck_reverse_rotate_b(t_stack **stack_b);
+void	ck_reverse_rotate_all(t_stack **stack_a, t_stack **stack_b);
 #endif

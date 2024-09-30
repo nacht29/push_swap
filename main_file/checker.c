@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:29:24 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:29:24 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/checker.h"
 
-int main(int ac, char *av[])
+int	main(int ac, char *av[])
 {
-	stack	*stack_a;
-	stack	*stack_b;
-	
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 2 || (ac == 2 && !av[1][0]))
@@ -14,7 +26,7 @@ int main(int ac, char *av[])
 	checker(stack_a, stack_b);
 }
 
-void	checker(stack *stack_a, stack *stack_b)
+void	checker(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*all_ops;
 	char	**operations;
@@ -30,14 +42,13 @@ void	checker(stack *stack_a, stack *stack_b)
 	free(stack_b);
 }
 
-void	checking_process(char **operations, stack *stack_a, stack *stack_b)
+void	checking_process(char **operations, t_stack *stack_a, t_stack *stack_b)
 {
 	char	*line;
 
 	while (1)
 	{
 		line = get_next_line(0);
-
 		if (line == NULL)
 		{
 			free(line);
@@ -53,38 +64,39 @@ void	checking_process(char **operations, stack *stack_a, stack *stack_b)
 		ft_printf("KO\n");
 }
 
-void	exec_oper(stack **stack_a, stack **stack_b, char *oper)
+void	exec_oper(t_stack **stack_a, t_stack **stack_b, char *oper)
 {
 	oper = ft_strtrim(oper, "\n");
 	if (ft_strncmp(oper, "pb", ft_strlen(oper)) == 0)
 		ck_push_a_to_b(stack_a, stack_b);
 	else if (ft_strncmp(oper, "pa", ft_strlen(oper)) == 0)
 		ck_push_b_to_a(stack_a, stack_b);
-	else if (ft_strncmp(oper, "sa", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "sa", ft_strlen(oper)) == 0)
 		ck_swap_a(stack_a);
-	else if (ft_strncmp(oper, "sb", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "sb", ft_strlen(oper)) == 0)
 		ck_swap_b(stack_b);
-	else if (ft_strncmp(oper, "ss", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "ss", ft_strlen(oper)) == 0)
 		ck_swap_all(stack_a, stack_b);
-	else if (ft_strncmp(oper, "ra", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "ra", ft_strlen(oper)) == 0)
 		ck_rotate_a(stack_a);
-	else if (ft_strncmp(oper, "rb", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "rb", ft_strlen(oper)) == 0)
 		ck_rotate_b(stack_b);
-	else if (ft_strncmp(oper, "rr", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "rr", ft_strlen(oper)) == 0)
 		ck_rotate_all(stack_a, stack_b);
-	else if (ft_strncmp(oper, "rra", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "rra", ft_strlen(oper)) == 0)
 		ck_reverse_rotate_a(stack_a);
-	else if (ft_strncmp(oper, "rrb", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "rrb", ft_strlen(oper)) == 0)
 		ck_reverse_rotate_b(stack_b);
-	else if (ft_strncmp(oper, "rrr", ft_strlen(oper)) ==  0)
+	else if (ft_strncmp(oper, "rrr", ft_strlen(oper)) == 0)
 		ck_reverse_rotate_all(stack_a, stack_b);
 }
 
 int	is_oper(char **operations, char *s)
 {
 	size_t	len;
-	char	**op_ptr = operations;
+	char	**op_ptr;
 
+	op_ptr = operations;
 	while (*op_ptr)
 	{
 		len = ft_strlen(*op_ptr);

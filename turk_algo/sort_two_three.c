@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_two_three.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:43:46 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:43:46 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-void	sort_two(stack **stack_a)
+void	sort_two(t_stack **stack_a)
 {
-	node	*cur;
+	t_node	*cur;
 
 	if ((*stack_a)->size != 2)
 		return ;
@@ -13,9 +25,9 @@ void	sort_two(stack **stack_a)
 		swap_a(stack_a, TRUE);
 }
 
-void	sort_three(stack **stack_a)
+void	sort_three(t_stack **stack_a)
 {
-	node	*biggest_node;
+	t_node	*biggest_node;
 
 	if (stack_is_sorted(*stack_a) == TRUE)
 		return ;

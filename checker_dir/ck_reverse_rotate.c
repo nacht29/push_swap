@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ck_reverse_rotate.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:54:20 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:54:20 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/checker.h"
 
-static void	*get_last_node(stack *stack)
+static void	*get_last_node(t_stack *stack)
 {
-	node	*last_node;
-	
+	t_node	*last_node;
+
 	if (!(stack->top))
 		return (NULL);
 	last_node = stack->top;
@@ -12,17 +24,17 @@ static void	*get_last_node(stack *stack)
 	return (last_node);
 }
 
-static void	*get_sec_last_node(stack *stack)
+static void	*get_sec_last_node(t_stack *stack)
 {
-	node	*sec_last_node;
-	node	*temp;
+	t_node	*sec_last_node;
+	t_node	*temp;
 	int		i;
-	
+
 	if (!stack->top)
 		return (NULL);
 	i = 0;
 	temp = stack->top;
-	sec_last_node = stack->top;     
+	sec_last_node = stack->top;
 	while (temp->next)
 	{
 		temp = temp->next;
@@ -36,10 +48,10 @@ static void	*get_sec_last_node(stack *stack)
 	return (sec_last_node);
 }
 
-void	ck_reverse_rotate_a(stack **stack_a)
+void	ck_reverse_rotate_a(t_stack **stack_a)
 {
-	node	*last_node;
-	node	*sec_last_node;
+	t_node	*last_node;
+	t_node	*sec_last_node;
 
 	if ((*stack_a)->size <= 1)
 		return ;
@@ -49,10 +61,10 @@ void	ck_reverse_rotate_a(stack **stack_a)
 	sec_last_node->next = NULL;
 }
 
-void	ck_reverse_rotate_b(stack **stack_b)
+void	ck_reverse_rotate_b(t_stack **stack_b)
 {
-	node	*last_node;
-	node	*sec_last_node;
+	t_node	*last_node;
+	t_node	*sec_last_node;
 
 	if ((*stack_b)->size <= 1)
 		return ;
@@ -62,7 +74,7 @@ void	ck_reverse_rotate_b(stack **stack_b)
 	sec_last_node->next = NULL;
 }
 
-void	ck_reverse_rotate_all(stack **stack_a, stack **stack_b)
+void	ck_reverse_rotate_all(t_stack **stack_a, t_stack **stack_b)
 {
 	ck_reverse_rotate_a(stack_a);
 	ck_reverse_rotate_b(stack_b);

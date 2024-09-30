@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_a_to_b.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:43:39 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:43:39 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 /*
@@ -8,7 +20,7 @@
 -push cost
 *prepare to push to B
 */
-void	init_nodes_a(stack *stack_a, stack *stack_b)
+void	init_nodes_a(t_stack *stack_a, t_stack *stack_b)
 {
 	index_median(stack_a);
 	index_median(stack_b);
@@ -24,11 +36,11 @@ void	init_nodes_a(stack *stack_a, stack *stack_b)
 smaller than node in A
 *stack B is sorted in descending order
 */
-void	set_target_a(stack *stack_a, stack *stack_b)
+void	set_target_a(t_stack *stack_a, t_stack *stack_b)
 {
-	node	*cur_a;
-	node	*cur_b;
-	node	*targ;
+	t_node	*cur_a;
+	t_node	*cur_b;
+	t_node	*targ;
 	int		closest_smaller;
 
 	cur_a = stack_a->top;
@@ -61,15 +73,15 @@ correct pos
 *then, work on individual stacks to bring the
 push node and target node to the top of the stack
 */
-void	move_a_to_b(stack **stack_a, stack **stack_b)
+void	move_a_to_b(t_stack **stack_a, t_stack **stack_b)
 {
-	node	*cheapest;
+	t_node	*cheapest;
 
 	if (!stack_a || !(*stack_a) || !(*stack_a)->top)
 		return ;
 	cheapest = get_cheapest(*stack_a);
 	if (!cheapest)
-		return	;
+		return ;
 	while ((*stack_a)->top != cheapest)
 	{
 		if (cheapest->above_median && cheapest->target_node->above_median)

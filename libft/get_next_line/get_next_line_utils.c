@@ -6,7 +6,7 @@
 /*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 18:28:29 by yachan            #+#    #+#             */
-/*   Updated: 2024/08/25 18:28:30 by yachan           ###   ########.fr       */
+/*   Updated: 2024/09/30 18:01:55 by yachan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	has_newline(const char *s, int c)
 	return (FALSE);
 }
 
-void	free_list(t_node **lst)
+void	free_list(t_nodes **lst)
 {
-	t_node	*temp;
-	t_node	*current;
+	t_nodes	*temp;
+	t_nodes	*current;
 
 	if (!lst || !(*lst))
 		return ;

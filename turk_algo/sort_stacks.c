@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_stacks.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:43:45 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:43:45 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 /*
@@ -5,7 +17,7 @@
 *initiates stack B for use
 *already checked, no need to run index_median here
 */
-void	sort_stacks(stack **stack_a, stack **stack_b)
+void	sort_stacks(t_stack **stack_a, t_stack **stack_b)
 {
 	init_stack_b(stack_b);
 	if (stack_is_sorted(*stack_a) == TRUE)
@@ -32,20 +44,20 @@ void	sort_stacks(stack **stack_a, stack **stack_b)
 *for sorting > 3
 *mallocs and initiates stack b
 */
-void	init_stack_b(stack **stack_b)
+void	init_stack_b(t_stack **stack_b)
 {
-	*stack_b = (stack *)malloc(sizeof(stack));
+	*stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (!(*stack_b) || !stack_b)
 		err_and_exit();
 	(*stack_b)->top = NULL;
 	(*stack_b)->size = 0;
 }
 
-void	min_on_top(stack *stack_a)
+void	min_on_top(t_stack *stack_a)
 {
-	node	*min;
-	
-	min = find_min(stack_a); 
+	t_node	*min;
+
+	min = find_min(stack_a);
 	while (stack_a->top != min)
 	{
 		index_median(stack_a);

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_check.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:42:42 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:43:01 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 static int	is_num_str(char *s);
-static int	is_duplicate(char *s, stack *stack);
+static int	is_duplicate(char *s, t_stack *stack);
 
-int	parse_check(char *num_str, stack *stack)
+int	parse_check(char *num_str, t_stack *stack)
 {
 	if (is_num_str(num_str) == FALSE)
 		return (FALSE);
@@ -14,7 +26,7 @@ int	parse_check(char *num_str, stack *stack)
 	return (TRUE);
 }
 
-void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str)
+void	free_parse_data(t_stack **stack_a, char ***num_str_arr, char **num_str)
 {
 	int	i;
 
@@ -52,7 +64,7 @@ char	*combine_str(int ac, char **av)
 
 static int	is_num_str(char *s)
 {
-	if  (*s == '+' || *s == '-')
+	if (*s == '+' || *s == '-')
 		s++;
 	while (ft_isdigit(*s) == 1)
 		s++;
@@ -61,9 +73,9 @@ static int	is_num_str(char *s)
 	return (FALSE);
 }
 
-static int	is_duplicate(char *s, stack *stack)
+static int	is_duplicate(char *s, t_stack *stack)
 {
-	node	*cur;
+	t_node	*cur;
 
 	cur = stack->top;
 	while (cur)

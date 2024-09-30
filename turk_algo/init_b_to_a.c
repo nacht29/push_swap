@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_b_to_a.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:43:41 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:43:41 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-void	init_nodes_b(stack *stack_a, stack *stack_b)
+void	init_nodes_b(t_stack *stack_a, t_stack *stack_b)
 {
 	index_median(stack_a);
 	index_median(stack_b);
@@ -14,11 +26,11 @@ void	init_nodes_b(stack *stack_a, stack *stack_b)
 larger than node in B
 *stack A is sorted in ascending order
 */
-void	set_target_b(stack *stack_a, stack *stack_b)
+void	set_target_b(t_stack *stack_a, t_stack *stack_b)
 {
-	node	*cur_a;
-	node	*cur_b;
-	node	*targ;
+	t_node	*cur_a;
+	t_node	*cur_b;
+	t_node	*targ;
 	int		closest_larger;
 
 	cur_b = stack_b->top;
@@ -43,7 +55,7 @@ void	set_target_b(stack *stack_a, stack *stack_b)
 	}
 }
 
-void	move_b_to_a(stack **stack_a, stack **stack_b)
+void	move_b_to_a(t_stack **stack_a, t_stack **stack_b)
 {
 	bring_to_top(*stack_a, (*stack_b)->top->target_node, 'a');
 	push_b_to_a(stack_a, stack_b);

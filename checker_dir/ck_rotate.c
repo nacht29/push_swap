@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ck_rotate.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:54:22 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:54:22 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/checker.h"
 
 /*
@@ -16,9 +28,9 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	ck_rotate_a(stack **stack_a)
+void	ck_rotate_a(t_stack **stack_a)
 {
-	node	*first_node;
+	t_node	*first_node;
 
 	if ((*stack_a)->size <= 1)
 		return ;
@@ -44,9 +56,9 @@ Make the previously first node the new last node.
 *4.Update the head of the list: Set the second node as the new 
 head of the list.
 */
-void	ck_rotate_b(stack **stack_b)
+void	ck_rotate_b(t_stack **stack_b)
 {
-	node	*first_node;
+	t_node	*first_node;
 
 	if ((*stack_b)->size <= 1)
 		return ;
@@ -59,7 +71,7 @@ void	ck_rotate_b(stack **stack_b)
 /*
 *reverse rotates stacks A and B
 */
-void	ck_rotate_all(stack **stack_a, stack **stack_b)
+void	ck_rotate_all(t_stack **stack_a, t_stack **stack_b)
 {
 	ck_rotate_a(stack_a);
 	ck_rotate_b(stack_b);

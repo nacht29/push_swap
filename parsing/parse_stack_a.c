@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_stack_a.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:42:45 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:42:45 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-void	init_stack_a(int ac, char **av, stack **stack_a)
+void	init_stack_a(int ac, char **av, t_stack **stack_a)
 {
-	*stack_a = (stack *)malloc(sizeof(stack));
+	*stack_a = (t_stack *)malloc(sizeof(t_stack));
 	if (!(*stack_a) || !stack_a)
 		err_and_exit();
 	(*stack_a)->top = NULL;
@@ -10,10 +22,10 @@ void	init_stack_a(int ac, char **av, stack **stack_a)
 	parse_stack_a(ac, av, stack_a);
 }
 
-void	parse_stack_a(int ac, char **av, stack **stack_a)
+void	parse_stack_a(int ac, char **av, t_stack **stack_a)
 {
 	int		i;
-	node	*new_node;
+	t_node	*new_node;
 	char	*num_str;
 	char	**num_str_arr;
 

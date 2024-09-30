@@ -6,7 +6,7 @@
 /*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 18:28:36 by yachan            #+#    #+#             */
-/*   Updated: 2024/08/25 18:28:37 by yachan           ###   ########.fr       */
+/*   Updated: 2024/09/30 18:01:19 by yachan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ typedef struct s_linked_list
 {
 	char					*str;
 	struct s_linked_list	*next;
-}	t_node;
+}	t_nodes;
 
 char	*get_next_line(int fd);
-int		read_to_list(t_node **lst, int fd);
-void	add_node(t_node **lst, char *buffer);
-char	*extract_line(t_node *lst, char **temp_buff);
-void	free_list(t_node **lst);
+int		read_to_list(t_nodes **lst, int fd);
+void	add_node(t_nodes **lst, char *buffer);
+char	*extract_line(t_nodes *lst, char **temp_buff);
+void	free_list(t_nodes **lst);
 
 int		has_newline(const char *s, int c);
-void	free_list(t_node **lst);
+void	free_list(t_nodes **lst);
 #endif

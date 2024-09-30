@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list-manipulation.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:34:16 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:59:25 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 /*
 *malloc and create a new node
 */
-node	*append_node(int new_num)
+t_node	*append_node(int new_num)
 {
-	node	*new_node;
+	t_node	*new_node;
 
-	new_node = (node *)malloc(sizeof(node));
+	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
 		return (NULL);
 	new_node->num = new_num;
@@ -23,7 +35,7 @@ node	*append_node(int new_num)
 /*
 *adds a new node to the start of a linked list
 */
-void	add_to_top(stack *stack, node *new_node)
+void	add_to_top(t_stack *stack, t_node *new_node)
 {
 	if (!stack || !new_node)
 		return ;
@@ -34,16 +46,16 @@ void	add_to_top(stack *stack, node *new_node)
 /*
 *adds a new node to the end of a linked list
 */
-void 	add_to_bottom(stack *stack, node *new_node)
+void	add_to_bottom(t_stack *stack, t_node *new_node)
 {
-	node	*current;
+	t_node	*current;
 
 	if (!stack || !new_node)
-		return;
+		return ;
 	if (!stack->top)
 	{
 		stack->top = new_node;
-		return;
+		return ;
 	}
 	current = stack->top;
 	while (current->next)
@@ -54,10 +66,10 @@ void 	add_to_bottom(stack *stack, node *new_node)
 /*
 *frees the entire stack
 */
-void	free_whole_stack(stack **stack)
+void	free_whole_stack(t_stack **stack)
 {
-	node	*current;
-	node	*temp;
+	t_node	*current;
+	t_node	*temp;
 
 	if (!stack || !(*stack))
 		return ;

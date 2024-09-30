@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_nodes_utils.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:43:43 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:43:43 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 /*
@@ -5,9 +17,9 @@
 *used to determine the least costly operation to perform
 to bring the node to the correct pos
 */
-void	index_median(stack *stack)
+void	index_median(t_stack *stack)
 {
-	node	*cur;
+	t_node	*cur;
 	int		median;
 	int		i;
 
@@ -39,10 +51,10 @@ set to TRUE
 *hence, if no node is cheaper than the first, the first node is the
 cheapest
 */
-void	set_cheapest(stack *stack)
+void	set_cheapest(t_stack *stack)
 {
-	node	*cur;
-	node	*cur_cheapest;
+	t_node	*cur;
+	t_node	*cur_cheapest;
 	int		cheapest_cost;
 
 	if (!stack)
@@ -69,11 +81,11 @@ the push node and its target node to the correct pos
 (most likely on top of the stack)
 */
 
-void	cost_calc(stack *stack_a, stack *stack_b)
+void	cost_calc(t_stack *stack_a, t_stack *stack_b)
 {
-	int	size_a;
-	int	size_b;
-	node *cur;
+	int		size_a;
+	int		size_b;
+	t_node	*cur;
 
 	size_a = stack_a->size;
 	size_b = stack_b->size;
@@ -97,7 +109,7 @@ void	cost_calc(stack *stack_a, stack *stack_b)
 bring a node to the top of the stack
 */
 
-void	bring_to_top(stack *stack, node *top_node, char stack_name)
+void	bring_to_top(t_stack *stack, t_node *top_node, char stack_name)
 {
 	while (stack->top != top_node)
 	{

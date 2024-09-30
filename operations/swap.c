@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:34:25 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:34:25 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 /*
 *swaps the top two numbers of a stack
 *arguments: stack name
 */
-static void	swap_nodes(stack **stack)
+static void	swap_nodes(t_stack **stack)
 {
-	node	*first;
-	node	*second;
+	t_node	*first;
+	t_node	*second;
 
 	first = (*stack)->top;
 	second = first->next;
@@ -25,9 +37,8 @@ static void	swap_nodes(stack **stack)
 *n1 = n2
 *n2 = temp;
 */
-void	swap_a(stack **stack_a, int print)
+void	swap_a(t_stack **stack_a, int print)
 {
-
 	if (!((*stack_a)->top) || !((*stack_a)->top->next))
 		return ;
 	swap_nodes(stack_a);
@@ -43,9 +54,8 @@ void	swap_a(stack **stack_a, int print)
 *n1 = n2
 *n2 = temp;
 */
-void	swap_b(stack **stack_b, int print)
+void	swap_b(t_stack **stack_b, int print)
 {
-
 	if (!((*stack_b)->top) || !((*stack_b)->top->next))
 		return ;
 	swap_nodes(stack_b);
@@ -56,10 +66,10 @@ void	swap_b(stack **stack_b, int print)
 /*
 *runs both swap_a() and swap_b()
 */
-void	swap_all(stack **stack_a, stack **stack_b)
+void	swap_all(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!(*stack_a) || !(*stack_b))
-		return	;
+		return ;
 	swap_a(stack_a, FALSE);
 	swap_b(stack_b, FALSE);
 	ft_printf("ss\n");

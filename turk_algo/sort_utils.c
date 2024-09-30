@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:43:49 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:43:49 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 /*
 *boolean function
 *returns TRUE is stack is sorted, else FALSE
 */
-int	stack_is_sorted(stack *stack)
+int	stack_is_sorted(t_stack *stack)
 {
-	node	*cur;
-	cur = stack->top;
+	t_node	*cur;
 
+	cur = stack->top;
 	while (cur->next)
 	{
 		if (cur->num > cur->next->num)
@@ -22,11 +34,11 @@ int	stack_is_sorted(stack *stack)
 *finds the node containing the maximum value in a stack
 *used when nodes in A cannot find target node in B
 */
-node	*find_max(stack *stack)
+t_node	*find_max(t_stack *stack)
 {
-	node	*cur;
+	t_node	*cur;
 	int		max;
-	node	*max_node;
+	t_node	*max_node;
 
 	cur = stack->top;
 	max = INT_MIN;
@@ -43,16 +55,15 @@ node	*find_max(stack *stack)
 	return (max_node);
 }
 
-
 /*
 *finds the node containing the maximum value in a stack
 *used when nodes in B cannot find target node in A
 */
-node	*find_min(stack *stack)
+t_node	*find_min(t_stack *stack)
 {
-	node	*cur;
+	t_node	*cur;
 	int		min;
-	node	*min_node;
+	t_node	*min_node;
 
 	cur = stack->top;
 	min = INT_MAX;
@@ -73,15 +84,15 @@ node	*find_min(stack *stack)
 *locates and returns the cheapest node
 *searches for node with [cheapest = TRUE]
 */
-node	*get_cheapest(stack *stack)
+t_node	*get_cheapest(t_stack *stack)
 {
-	node	*cur;
+	t_node	*cur;
 
 	cur = stack->top;
 	while (cur)
 	{
 		if (cur->cheapest == TRUE)
-			break;
+			break ;
 		cur = cur->next;
 	}
 	return (cur);

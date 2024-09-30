@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yachan <yachan@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 17:19:47 by yachan            #+#    #+#             */
+/*   Updated: 2024/09/30 17:59:50 by yachan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -20,13 +32,13 @@ typedef struct s_node
 	int				cheapest;
 	struct s_node	*target_node;
 	struct s_node	*next;
-}	node;
+}	t_node;
 
 typedef struct s_stack
 {
-	node	*top;
+	t_node	*top;
 	int		size;
-}	stack;
+}	t_stack;
 
 /*============*/
 /*MAIN PROCESS*/
@@ -34,13 +46,13 @@ typedef struct s_stack
 
 /*initialising and parsing stack A*/
 
-void	init_stack_a(int ac, char **av, stack **stack_a);
-void	parse_stack_a(int ac, char **av, stack **stack_a);
+void	init_stack_a(int ac, char **av, t_stack **stack_a);
+void	parse_stack_a(int ac, char **av, t_stack **stack_a);
 
 /*parse check*/
 
-int		parse_check(char *num_str, stack *stack);
-void	free_parse_data(stack **stack_a, char ***num_str_arr, char **num_str);
+int		parse_check(char *num_str, t_stack *stack);
+void	free_parse_data(t_stack **stack_a, char ***num_str_arr, char **num_str);
 char	*combine_str(int ac, char **av);
 
 /*utils*/
@@ -54,33 +66,33 @@ void	free_str_arr(char ***str_arr);
 
 /*linked list manipulations*/
 
-node	*append_node(int new_num);
-void	add_to_top(stack *stack, node *new_node);
-void	add_to_bottom(stack *stack, node *new_node);
-void	free_whole_stack(stack **stack);
+t_node	*append_node(int new_num);
+void	add_to_top(t_stack *stack, t_node *new_node);
+void	add_to_bottom(t_stack *stack, t_node *new_node);
+void	free_whole_stack(t_stack **stack);
 
 /*push*/
 
-void	push_a_to_b(stack **stack_a, stack **stack_b);
-void	push_b_to_a(stack **stack_a, stack **stack_b);
+void	push_a_to_b(t_stack **stack_a, t_stack **stack_b);
+void	push_b_to_a(t_stack **stack_a, t_stack **stack_b);
 
 /*swap*/
 
-void	swap_a(stack **stack_a, int print);
-void	swap_b(stack **stack_b, int print);
-void	swap_all(stack **stack_a, stack **stack_b);
+void	swap_a(t_stack **stack_a, int print);
+void	swap_b(t_stack **stack_b, int print);
+void	swap_all(t_stack **stack_a, t_stack **stack_b);
 
 /*rotate*/
 
-void	rotate_a(stack **stack_a, int print);
-void	rotate_b(stack **stack_b, int print);
-void	rotate_all(stack **stack_a, stack **stack_b);
+void	rotate_a(t_stack **stack_a, int print);
+void	rotate_b(t_stack **stack_b, int print);
+void	rotate_all(t_stack **stack_a, t_stack **stack_b);
 
 /*reverse rotate*/
 
-void	reverse_rotate_a(stack **stack_a, int print);
-void	reverse_rotate_b(stack **stack_b, int print);
-void	reverse_rotate_all(stack **stack_a, stack **stack_b);
+void	reverse_rotate_a(t_stack **stack_a, int print);
+void	reverse_rotate_b(t_stack **stack_b, int print);
+void	reverse_rotate_all(t_stack **stack_a, t_stack **stack_b);
 
 /*reverse rotate*/
 
@@ -90,40 +102,40 @@ void	reverse_rotate_all(stack **stack_a, stack **stack_b);
 
 /*sort 2 and sort 3*/
 
-void	sort_two(stack **stack_a);
-void	sort_three(stack **stack_a);
+void	sort_two(t_stack **stack_a);
+void	sort_three(t_stack **stack_a);
 
 /*sort multiple*/
 // main sorting process
 
-void	sort_stacks(stack **stack_a, stack **stack_b);
-void	init_stack_b(stack **stack_b);
-void	min_on_top(stack *stack_a);
+void	sort_stacks(t_stack **stack_a, t_stack **stack_b);
+void	init_stack_b(t_stack **stack_b);
+void	min_on_top(t_stack *stack_a);
 
 /*initiate nodes and push*/
 // push from a to b
 
-void	init_nodes_a(stack *stack_a, stack *stack_b);
-void	set_target_a(stack *stack_a, stack *stack_b);;
-void	move_a_to_b(stack **stack_a, stack **stack_b);
+void	init_nodes_a(t_stack *stack_a, t_stack *stack_b);
+void	set_target_a(t_stack *stack_a, t_stack *stack_b);;
+void	move_a_to_b(t_stack **stack_a, t_stack **stack_b);
 
 // push from b to a
 
-void	init_nodes_b(stack *stack_a, stack *stack_b);
-void	set_target_b(stack *stack_a, stack *stack_b);
-void	move_b_to_a(stack **stack_a, stack **stack_b);
+void	init_nodes_b(t_stack *stack_a, t_stack *stack_b);
+void	set_target_b(t_stack *stack_a, t_stack *stack_b);
+void	move_b_to_a(t_stack **stack_a, t_stack **stack_b);
 
 /*init and move utils*/
 
-void	index_median(stack *stack);
-void	set_cheapest(stack *stack);
-void	cost_calc(stack *src_stack, stack *targ_stack);
-void	bring_to_top(stack *stack, node *top_node, char stack_name);
+void	index_median(t_stack *stack);
+void	set_cheapest(t_stack *stack);
+void	cost_calc(t_stack *src_stack, t_stack *targ_stack);
+void	bring_to_top(t_stack *stack, t_node *top_node, char stack_name);
 
 /*sort utils*/
 
-int		stack_is_sorted(stack *stack);
-node	*find_max(stack *stack);
-node	*find_min(stack *stack);
-node	*get_cheapest(stack *stack);
+int		stack_is_sorted(t_stack *stack);
+t_node	*find_max(t_stack *stack);
+t_node	*find_min(t_stack *stack);
+t_node	*get_cheapest(t_stack *stack);
 #endif
